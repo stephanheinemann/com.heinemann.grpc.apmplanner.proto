@@ -12,6 +12,9 @@
 #include <apm_planner/apm_planner.pb.h>
 #include <apm_planner/apm_planner.grpc.pb.h>
 
+#include <../uas/UASManager.h>
+#include <../uas/UASInterface.h>
+
 using grpc::Server;
 using grpc::ServerBuilder;
 using grpc::ServerContext;
@@ -31,6 +34,12 @@ class UasManagerService final : public UasManager::Service {
 			override {
 		int id = 9999;
 		uasIdentifier->set_identifier(id);
+
+		UASInterface* activeUAS = UASManager::instance()->getActiveUAS();
+		if (NULL != activeUAS) {
+			uasIdentifier->set_identifier(activeUAS->getUASID());
+		}
+
 		return Status::OK;
 	}
 
