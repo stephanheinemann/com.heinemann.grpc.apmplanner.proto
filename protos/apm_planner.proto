@@ -1,0 +1,25 @@
+syntax = "proto3";
+
+option java_package = "com.heinemann.grpc.apmplanner";
+option objc_class_prefix = "APMPlanner";
+
+package com.heinemann.grpc.apmplanner;
+
+service UasManager {
+	rpc getActiveUas(Null) returns (UasIdentifier) {}
+	rpc setActiveUas(UasIdentifier) returns (Null) {}
+	rpc getUasStream(UasIdentifier) returns (stream Uas) {}
+}
+
+message Null {
+}
+
+message UasIdentifier {
+	int32 identifier = 1;
+}
+
+message Uas {
+	int32 identifier = 1;
+	string name = 2;
+}
+
