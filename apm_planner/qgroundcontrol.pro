@@ -283,9 +283,9 @@ INCLUDEPATH += \
     src/ui \
     src/ui/linechart \
     src/ui/uas \
+    src/grpc \
     src/ui/map \
     src/uas \
-    src/grpc \
     src/comm \
     include/ui \
     src/input \
@@ -333,6 +333,7 @@ FORMS += \
     src/ui/QGCMAVLinkLogPlayer.ui \
     src/ui/QGCWaypointListMulti.ui \
     src/ui/QGCUDPLinkConfiguration.ui \
+    src/ui/QGCUDPClientLinkConfiguration.ui \
     src/ui/QGCTCPLinkConfiguration.ui \
     src/ui/QGCSettingsWidget.ui \
     src/ui/map/QGCMapTool.ui \
@@ -405,6 +406,7 @@ FORMS += \
     src/ui/configuration/FailSafeConfig.ui \
     src/ui/configuration/AdvancedParamConfig.ui \
     src/ui/configuration/ArduCopterPidConfig.ui \
+    src/ui/configuration/CopterPidConfig.ui \
     src/ui/configuration/ApmPlaneLevel.ui \
     src/ui/configuration/ParamWidget.ui \
     src/ui/configuration/ArduPlanePidConfig.ui \
@@ -461,6 +463,7 @@ HEADERS += \
 #endif
     src/comm/MAVLinkSimulationLink.h \
     src/comm/UDPLink.h \
+    src/comm/UDPClientLink.h \
     src/comm/TCPLink.h \
     src/ui/ParameterInterface.h \
     src/ui/WaypointList.h \
@@ -507,6 +510,7 @@ HEADERS += \
     src/uas/QGCMAVLinkUASFactory.h \
     src/ui/QGCWaypointListMulti.h \
     src/ui/QGCUDPLinkConfiguration.h \
+    src/ui/QGCUDPClientLinkConfiguration.h \
     src/ui/QGCTCPLinkConfiguration.h \
     src/ui/QGCSettingsWidget.h \
     src/uas/QGCUASParamManager.h \
@@ -596,6 +600,7 @@ HEADERS += \
     src/ui/configuration/FailSafeConfig.h \
     src/ui/configuration/AdvancedParamConfig.h \
     src/ui/configuration/ArduCopterPidConfig.h \
+    src/ui/configuration/CopterPidConfig.h \
     src/ui/ApmToolBar.h \
     src/ui/configuration/PX4FirmwareUploader.h \
     src/ui/configuration/ApmPlaneLevel.h \
@@ -656,7 +661,8 @@ HEADERS += \
     src/ui/AP2DataPlot2DModel.h \
     src/ui/uas/PreFlightCalibrationDialog.h \
     src/ui/configuration/RadioFlashWizard.h \
-    src/ui/GraphTreeWidgetItem.h
+    src/ui/GraphTreeWidgetItem.h \
+    src/comm/LinkManagerFactory.h
 
 SOURCES += src/main.cc \
     src/QGCCore.cc \
@@ -682,6 +688,7 @@ SOURCES += src/main.cc \
 #endif
     src/comm/MAVLinkSimulationLink.cc \
     src/comm/UDPLink.cc \
+    src/comm/UDPClientLink.cc \
     src/comm/TCPLink.cc \
     src/ui/ParameterInterface.cc \
     src/ui/WaypointList.cc \
@@ -727,6 +734,7 @@ SOURCES += src/main.cc \
     src/uas/QGCMAVLinkUASFactory.cc \
     src/ui/QGCWaypointListMulti.cc \
     src/ui/QGCUDPLinkConfiguration.cc \
+    src/ui/QGCUDPClientLinkConfiguration.cc \
     src/ui/QGCTCPLinkConfiguration.cc \
     src/ui/QGCSettingsWidget.cc \
     src/uas/QGCUASParamManager.cc \
@@ -815,6 +823,7 @@ SOURCES += src/main.cc \
     src/ui/configuration/FailSafeConfig.cc \
     src/ui/configuration/AdvancedParamConfig.cc \
     src/ui/configuration/ArduCopterPidConfig.cc \
+    src/ui/configuration/CopterPidConfig.cc \
     src/ui/ApmToolBar.cc \
     src/ui/configuration/PX4FirmwareUploader.cc \
     src/ui/configuration/ApmPlaneLevel.cc \
@@ -875,7 +884,8 @@ SOURCES += src/main.cc \
     src/ui/AP2DataPlot2DModel.cc \
     src/ui/uas/PreFlightCalibrationDialog.cpp \
     src/ui/configuration/RadioFlashWizard.cpp \
-    src/ui/GraphTreeWidgetItem.cc
+    src/ui/GraphTreeWidgetItem.cc \
+    src/comm/LinkManagerFactory.cpp
 
 OTHER_FILES += \
     qml/components/DigitalDisplay.qml \

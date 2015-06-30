@@ -1,72 +1,80 @@
-#include <iostream>
-#include <thread>
+#include "UasManagerService.h"
 
-#include <grpc/grpc.h>
+#include <iostream>
+
 #include <grpc++/server.h>
 #include <grpc++/server_builder.h>
-#include <grpc++/server_context.h>
 #include <grpc++/server_credentials.h>
-#include <grpc++/status.h>
-#include <grpc++/stream.h>
-
-#include <apm_planner/apm_planner.pb.h>
-#include <apm_planner/apm_planner.grpc.pb.h>
+#include <grpc++/status_code_enum.h>
 
 #include <../uas/UASManager.h>
 #include <../uas/UASInterface.h>
 
 using grpc::Server;
 using grpc::ServerBuilder;
-using grpc::ServerContext;
-using grpc::ServerReader;
-using grpc::ServerReaderWriter;
 using grpc::ServerWriter;
-using grpc::Status;
+using grpc::StatusCode;
 
-using com::heinemann::grpc::apmplanner::UasManager;
-using com::heinemann::grpc::apmplanner::Null;
-using com::heinemann::grpc::apmplanner::UasIdentifier;
-using com::heinemann::grpc::apmplanner::Uas;
-
-class UasManagerService final : public UasManager::Service {
-
-	Status getActiveUas(ServerContext* context, const Null* none, UasIdentifier* uasIdentifier)
-			override {
-		int id = 9999;
-		uasIdentifier->set_identifier(id);
-
-		UASInterface* activeUAS = UASManager::instance()->getActiveUAS();
-		if (NULL != activeUAS) {
-			uasIdentifier->set_identifier(activeUAS->getUASID());
-		}
-
-		return Status::OK;
-	}
-
-	Status setActiveUas(ServerContext* context, const UasIdentifier* uasIdentifier, Null* none)
-			override {
-		return Status::OK;
-	}
-};
 
 std::thread* serverThread;
+const grpc::string UasManagerService::LISTENING = "UAS service listening on ";
+const grpc::string UasManagerService::DETAILS_NOT_FOUND = "no active UAS found";
 
-void run() {
-	std::string server_address("localhost:50051");
-	UasManagerService* service = new UasManagerService();
+UasManagerService::UasManagerService(grpc::string socket) {
+	this->socket = socket;
+}
+
+Status UasManagerService::getActiveUas(
+		ServerContext* context,
+		const Null* none,
+		UasIdentifier* uasIdentifier) {
+
+	(void) context;
+	(void) none;
+	Status status = Status(StatusCode::NOT_FOUND, DETAILS_NOT_FOUND);
+	int identifier = -1;
+	uasIdentifier->set_identifier(identifier);
+
+	UASInterface* activeUAS = UASManager::instance()->getActiveUAS();
+	if (NULL != activeUAS) {
+		uasIdentifier->set_identifier(activeUAS->getUASID());
+		status = Status::OK;
+	}
+
+	return status;
+}
+
+Status UasManagerService::setActiveUas(
+		ServerContext* context,
+		const UasIdentifier* uasIdentifier,
+		Null* none) {
+
+	(void) context;
+	(void) none;
+	return Status::OK;
+}
+
+Status UasManagerService::getUasStream(
+			ServerContext* context,
+			const UasIdentifier* uasIdentifier,
+			ServerWriter<Uas>* uasStream) {
+	return Status::OK;
+}
+
+void UasManagerService::run() {
+	std::string server_address(this->socket);
 	ServerBuilder builder;
 	builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
-	builder.RegisterService((UasManager::Service*) service);
+	builder.RegisterService((UasManager::Service*) this);
 	std::unique_ptr<Server> server(builder.BuildAndStart());
-	std::cout << "Server listening on " << server_address << std::endl;
+	std::cout << LISTENING << server_address << std::endl;
 	server->Wait();
-	delete service;
 }
 
-void start() {
-	serverThread = new std::thread(run);
+void UasManagerService::start() {
+	serverThread = new std::thread(&UasManagerService::run, this);
 }
 
-void stop() {
+void UasManagerService::stop() {
 	delete serverThread;
 }

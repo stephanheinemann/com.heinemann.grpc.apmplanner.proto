@@ -87,7 +87,8 @@ int main(int argc, char *argv[])
     // This is required to start the logger
     core.initialize();
 
-    start();
+    UasManagerService service("localhost:50051");
+    service.start();
 
     return core.exec();
 }
