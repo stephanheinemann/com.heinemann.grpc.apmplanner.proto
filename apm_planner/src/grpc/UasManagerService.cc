@@ -26,11 +26,11 @@ UasManagerService::UasManagerService(grpc::string socket) {
 
 Status UasManagerService::getActiveUas(
 		ServerContext* context,
-		const Null* none,
+		const Null* request,
 		UasIdentifier* uasIdentifier) {
 
 	(void) context;
-	(void) none;
+	(void) request;
 	Status status = Status(StatusCode::NOT_FOUND, DETAILS_NOT_FOUND);
 	int identifier = -1;
 	uasIdentifier->set_identifier(identifier);
@@ -47,10 +47,10 @@ Status UasManagerService::getActiveUas(
 Status UasManagerService::setActiveUas(
 		ServerContext* context,
 		const UasIdentifier* uasIdentifier,
-		Null* none) {
+		Null* response) {
 
 	(void) context;
-	(void) none;
+	(void) response;
 	Status status = Status(StatusCode::NOT_FOUND, DETAILS_NOT_FOUND);
 
 	UASInterface* uasIf = UASManager::instance()->getUASForId(uasIdentifier->identifier());
@@ -74,7 +74,16 @@ Status UasManagerService::getUas(
 	if (NULL != uasIf) {
 		uas->set_identifier(uasIf->getUASID());
 		uas->set_name(uasIf->getUASName().toStdString());
+		uas->set_systemtypename(uasIf->getSystemTypeName().toStdString());
+		uas->set_autopilottypename(uasIf->getAutopilotTypeName().toStdString());
+		uas->set_shortstate(uasIf->getShortState().toStdString());
+		uas->set_shortmode(uasIf->getShortMode().toStdString());
+		uas->set_isarmed(uasIf->isArmed());
 		uas->set_batteryspecs(uasIf->getBatterySpecs().toStdString());
+		uas->set_uptime(uasIf->getUptime());
+		uas->set_roll(uasIf->getRoll());
+		uas->set_pitch(uasIf->getPitch());
+		uas->set_yaw(uasIf->getYaw());
 		status = Status::OK;
 	}
 
@@ -83,21 +92,67 @@ Status UasManagerService::getUas(
 
 Status UasManagerService::getUasList(
 		ServerContext* context,
-		const Null* none,
+		const Null* request,
 		ServerWriter<Uas>* uasWriter) {
 
 	(void) context;
-	(void) none;
+	(void) request;
 	Uas uas;
 
 	for (UASInterface* uasIf  : UASManager::instance()->getUASList()) {
 		uas.set_identifier(uasIf->getUASID());
 		uas.set_name(uasIf->getUASName().toStdString());
+		uas.set_systemtypename(uasIf->getSystemTypeName().toStdString());
+		uas.set_autopilottypename(uasIf->getAutopilotTypeName().toStdString());
+		uas.set_shortstate(uasIf->getShortState().toStdString());
+		uas.set_shortmode(uasIf->getShortMode().toStdString());
+		uas.set_isarmed(uasIf->isArmed());
 		uas.set_batteryspecs(uasIf->getBatterySpecs().toStdString());
+		uas.set_uptime(uasIf->getUptime());
+		uas.set_roll(uasIf->getRoll());
+		uas.set_pitch(uasIf->getPitch());
+		uas.set_yaw(uasIf->getYaw());
 		uasWriter->Write(uas);
 	}
 
 	return Status::OK;
+}
+
+Status UasManagerService::reboot(
+		ServerContext* context,
+		const Null* request,
+		Null* response) {
+
+	(void) context;
+	(void) request;
+	(void) response;
+	Status status = Status(StatusCode::NOT_FOUND, DETAILS_NOT_FOUND);
+
+	UASInterface* uasIf = UASManager::instance()->getActiveUAS();
+	if (NULL != uasIf) {
+		uasIf->reboot();
+		status = Status::OK;
+	}
+
+	return status;
+}
+
+Status UasManagerService::setMode(
+		ServerContext* context,
+		const UasMode* mode,
+		Null* response) {
+
+	(void) context;
+	(void) response;
+	Status status = Status(StatusCode::NOT_FOUND, DETAILS_NOT_FOUND);
+
+	UASInterface* uasIf = UASManager::instance()->getActiveUAS();
+	if (NULL != uasIf) {
+		uasIf->setMode(mode->mode());
+		status = Status::OK;
+	}
+
+	return status;
 }
 
 void UasManagerService::run() {

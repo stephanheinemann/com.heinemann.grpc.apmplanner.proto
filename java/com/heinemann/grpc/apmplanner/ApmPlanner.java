@@ -692,6 +692,378 @@ public final class ApmPlanner {
 
   }
 
+  public interface UasModeOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.heinemann.grpc.apmplanner.UasMode)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int32 mode = 1;</code>
+     */
+    int getMode();
+  }
+  /**
+   * Protobuf type {@code com.heinemann.grpc.apmplanner.UasMode}
+   */
+  public  static final class UasMode extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.heinemann.grpc.apmplanner.UasMode)
+      UasModeOrBuilder {
+    // Use UasMode.newBuilder() to construct.
+    private UasMode(com.google.protobuf.GeneratedMessage.Builder builder) {
+      super(builder);
+    }
+    private UasMode() {
+      mode_ = 0;
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private UasMode(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              mode_ = input.readInt32();
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw new RuntimeException(e.setUnfinishedMessage(this));
+      } catch (java.io.IOException e) {
+        throw new RuntimeException(
+            new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_UasMode_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_UasMode_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.heinemann.grpc.apmplanner.ApmPlanner.UasMode.class, com.heinemann.grpc.apmplanner.ApmPlanner.UasMode.Builder.class);
+    }
+
+    public static final int MODE_FIELD_NUMBER = 1;
+    private int mode_;
+    /**
+     * <code>optional int32 mode = 1;</code>
+     */
+    public int getMode() {
+      return mode_;
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (mode_ != 0) {
+        output.writeInt32(1, mode_);
+      }
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (mode_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, mode_);
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasMode parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasMode parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasMode parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasMode parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasMode parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasMode parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasMode parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasMode parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasMode parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasMode parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.heinemann.grpc.apmplanner.ApmPlanner.UasMode prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.heinemann.grpc.apmplanner.UasMode}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.heinemann.grpc.apmplanner.UasMode)
+        com.heinemann.grpc.apmplanner.ApmPlanner.UasModeOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_UasMode_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_UasMode_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.heinemann.grpc.apmplanner.ApmPlanner.UasMode.class, com.heinemann.grpc.apmplanner.ApmPlanner.UasMode.Builder.class);
+      }
+
+      // Construct using com.heinemann.grpc.apmplanner.ApmPlanner.UasMode.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        mode_ = 0;
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_UasMode_descriptor;
+      }
+
+      public com.heinemann.grpc.apmplanner.ApmPlanner.UasMode getDefaultInstanceForType() {
+        return com.heinemann.grpc.apmplanner.ApmPlanner.UasMode.getDefaultInstance();
+      }
+
+      public com.heinemann.grpc.apmplanner.ApmPlanner.UasMode build() {
+        com.heinemann.grpc.apmplanner.ApmPlanner.UasMode result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.heinemann.grpc.apmplanner.ApmPlanner.UasMode buildPartial() {
+        com.heinemann.grpc.apmplanner.ApmPlanner.UasMode result = new com.heinemann.grpc.apmplanner.ApmPlanner.UasMode(this);
+        result.mode_ = mode_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.heinemann.grpc.apmplanner.ApmPlanner.UasMode) {
+          return mergeFrom((com.heinemann.grpc.apmplanner.ApmPlanner.UasMode)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.heinemann.grpc.apmplanner.ApmPlanner.UasMode other) {
+        if (other == com.heinemann.grpc.apmplanner.ApmPlanner.UasMode.getDefaultInstance()) return this;
+        if (other.getMode() != 0) {
+          setMode(other.getMode());
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.heinemann.grpc.apmplanner.ApmPlanner.UasMode parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.heinemann.grpc.apmplanner.ApmPlanner.UasMode) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int mode_ ;
+      /**
+       * <code>optional int32 mode = 1;</code>
+       */
+      public int getMode() {
+        return mode_;
+      }
+      /**
+       * <code>optional int32 mode = 1;</code>
+       */
+      public Builder setMode(int value) {
+        
+        mode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 mode = 1;</code>
+       */
+      public Builder clearMode() {
+        
+        mode_ = 0;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.heinemann.grpc.apmplanner.UasMode)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.heinemann.grpc.apmplanner.UasMode)
+    private static final com.heinemann.grpc.apmplanner.ApmPlanner.UasMode DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.heinemann.grpc.apmplanner.ApmPlanner.UasMode();
+    }
+
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasMode getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    public static final com.google.protobuf.Parser<UasMode> PARSER =
+        new com.google.protobuf.AbstractParser<UasMode>() {
+      public UasMode parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        try {
+          return new UasMode(input, extensionRegistry);
+        } catch (RuntimeException e) {
+          if (e.getCause() instanceof
+              com.google.protobuf.InvalidProtocolBufferException) {
+            throw (com.google.protobuf.InvalidProtocolBufferException)
+                e.getCause();
+          }
+          throw e;
+        }
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<UasMode> getParserForType() {
+      return PARSER;
+    }
+
+    public com.heinemann.grpc.apmplanner.ApmPlanner.UasMode getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
   public interface UasOrBuilder extends
       // @@protoc_insertion_point(interface_extends:com.heinemann.grpc.apmplanner.Uas)
       com.google.protobuf.MessageOrBuilder {
@@ -712,14 +1084,79 @@ public final class ApmPlanner {
         getNameBytes();
 
     /**
-     * <code>optional string batterySpecs = 3;</code>
+     * <code>optional string systemTypeName = 3;</code>
+     */
+    java.lang.String getSystemTypeName();
+    /**
+     * <code>optional string systemTypeName = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getSystemTypeNameBytes();
+
+    /**
+     * <code>optional string autopilotTypeName = 4;</code>
+     */
+    java.lang.String getAutopilotTypeName();
+    /**
+     * <code>optional string autopilotTypeName = 4;</code>
+     */
+    com.google.protobuf.ByteString
+        getAutopilotTypeNameBytes();
+
+    /**
+     * <code>optional string shortState = 5;</code>
+     */
+    java.lang.String getShortState();
+    /**
+     * <code>optional string shortState = 5;</code>
+     */
+    com.google.protobuf.ByteString
+        getShortStateBytes();
+
+    /**
+     * <code>optional string shortMode = 6;</code>
+     */
+    java.lang.String getShortMode();
+    /**
+     * <code>optional string shortMode = 6;</code>
+     */
+    com.google.protobuf.ByteString
+        getShortModeBytes();
+
+    /**
+     * <code>optional bool isArmed = 7;</code>
+     */
+    boolean getIsArmed();
+
+    /**
+     * <code>optional string batterySpecs = 8;</code>
      */
     java.lang.String getBatterySpecs();
     /**
-     * <code>optional string batterySpecs = 3;</code>
+     * <code>optional string batterySpecs = 8;</code>
      */
     com.google.protobuf.ByteString
         getBatterySpecsBytes();
+
+    /**
+     * <code>optional int64 uptime = 9;</code>
+     */
+    long getUptime();
+
+    /**
+     * <code>optional double roll = 10;</code>
+     */
+    double getRoll();
+
+    /**
+     * <code>optional double pitch = 11;</code>
+     */
+    double getPitch();
+
+    /**
+     * <code>optional double yaw = 12;</code>
+     */
+    double getYaw();
   }
   /**
    * Protobuf type {@code com.heinemann.grpc.apmplanner.Uas}
@@ -735,7 +1172,16 @@ public final class ApmPlanner {
     private Uas() {
       identifier_ = 0;
       name_ = "";
+      systemTypeName_ = "";
+      autopilotTypeName_ = "";
+      shortState_ = "";
+      shortMode_ = "";
+      isArmed_ = false;
       batterySpecs_ = "";
+      uptime_ = 0L;
+      roll_ = 0D;
+      pitch_ = 0D;
+      yaw_ = 0D;
     }
 
     @java.lang.Override
@@ -776,7 +1222,56 @@ public final class ApmPlanner {
             case 26: {
               com.google.protobuf.ByteString bs = input.readBytes();
 
+              systemTypeName_ = bs;
+              break;
+            }
+            case 34: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+
+              autopilotTypeName_ = bs;
+              break;
+            }
+            case 42: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+
+              shortState_ = bs;
+              break;
+            }
+            case 50: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+
+              shortMode_ = bs;
+              break;
+            }
+            case 56: {
+
+              isArmed_ = input.readBool();
+              break;
+            }
+            case 66: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+
               batterySpecs_ = bs;
+              break;
+            }
+            case 72: {
+
+              uptime_ = input.readInt64();
+              break;
+            }
+            case 81: {
+
+              roll_ = input.readDouble();
+              break;
+            }
+            case 89: {
+
+              pitch_ = input.readDouble();
+              break;
+            }
+            case 97: {
+
+              yaw_ = input.readDouble();
               break;
             }
           }
@@ -848,10 +1343,163 @@ public final class ApmPlanner {
       }
     }
 
-    public static final int BATTERYSPECS_FIELD_NUMBER = 3;
+    public static final int SYSTEMTYPENAME_FIELD_NUMBER = 3;
+    private volatile java.lang.Object systemTypeName_;
+    /**
+     * <code>optional string systemTypeName = 3;</code>
+     */
+    public java.lang.String getSystemTypeName() {
+      java.lang.Object ref = systemTypeName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          systemTypeName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string systemTypeName = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getSystemTypeNameBytes() {
+      java.lang.Object ref = systemTypeName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        systemTypeName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int AUTOPILOTTYPENAME_FIELD_NUMBER = 4;
+    private volatile java.lang.Object autopilotTypeName_;
+    /**
+     * <code>optional string autopilotTypeName = 4;</code>
+     */
+    public java.lang.String getAutopilotTypeName() {
+      java.lang.Object ref = autopilotTypeName_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          autopilotTypeName_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string autopilotTypeName = 4;</code>
+     */
+    public com.google.protobuf.ByteString
+        getAutopilotTypeNameBytes() {
+      java.lang.Object ref = autopilotTypeName_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        autopilotTypeName_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SHORTSTATE_FIELD_NUMBER = 5;
+    private volatile java.lang.Object shortState_;
+    /**
+     * <code>optional string shortState = 5;</code>
+     */
+    public java.lang.String getShortState() {
+      java.lang.Object ref = shortState_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          shortState_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string shortState = 5;</code>
+     */
+    public com.google.protobuf.ByteString
+        getShortStateBytes() {
+      java.lang.Object ref = shortState_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        shortState_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int SHORTMODE_FIELD_NUMBER = 6;
+    private volatile java.lang.Object shortMode_;
+    /**
+     * <code>optional string shortMode = 6;</code>
+     */
+    public java.lang.String getShortMode() {
+      java.lang.Object ref = shortMode_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          shortMode_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string shortMode = 6;</code>
+     */
+    public com.google.protobuf.ByteString
+        getShortModeBytes() {
+      java.lang.Object ref = shortMode_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        shortMode_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int ISARMED_FIELD_NUMBER = 7;
+    private boolean isArmed_;
+    /**
+     * <code>optional bool isArmed = 7;</code>
+     */
+    public boolean getIsArmed() {
+      return isArmed_;
+    }
+
+    public static final int BATTERYSPECS_FIELD_NUMBER = 8;
     private volatile java.lang.Object batterySpecs_;
     /**
-     * <code>optional string batterySpecs = 3;</code>
+     * <code>optional string batterySpecs = 8;</code>
      */
     public java.lang.String getBatterySpecs() {
       java.lang.Object ref = batterySpecs_;
@@ -868,7 +1516,7 @@ public final class ApmPlanner {
       }
     }
     /**
-     * <code>optional string batterySpecs = 3;</code>
+     * <code>optional string batterySpecs = 8;</code>
      */
     public com.google.protobuf.ByteString
         getBatterySpecsBytes() {
@@ -882,6 +1530,42 @@ public final class ApmPlanner {
       } else {
         return (com.google.protobuf.ByteString) ref;
       }
+    }
+
+    public static final int UPTIME_FIELD_NUMBER = 9;
+    private long uptime_;
+    /**
+     * <code>optional int64 uptime = 9;</code>
+     */
+    public long getUptime() {
+      return uptime_;
+    }
+
+    public static final int ROLL_FIELD_NUMBER = 10;
+    private double roll_;
+    /**
+     * <code>optional double roll = 10;</code>
+     */
+    public double getRoll() {
+      return roll_;
+    }
+
+    public static final int PITCH_FIELD_NUMBER = 11;
+    private double pitch_;
+    /**
+     * <code>optional double pitch = 11;</code>
+     */
+    public double getPitch() {
+      return pitch_;
+    }
+
+    public static final int YAW_FIELD_NUMBER = 12;
+    private double yaw_;
+    /**
+     * <code>optional double yaw = 12;</code>
+     */
+    public double getYaw() {
+      return yaw_;
     }
 
     private byte memoizedIsInitialized = -1;
@@ -902,8 +1586,35 @@ public final class ApmPlanner {
       if (!getNameBytes().isEmpty()) {
         output.writeBytes(2, getNameBytes());
       }
+      if (!getSystemTypeNameBytes().isEmpty()) {
+        output.writeBytes(3, getSystemTypeNameBytes());
+      }
+      if (!getAutopilotTypeNameBytes().isEmpty()) {
+        output.writeBytes(4, getAutopilotTypeNameBytes());
+      }
+      if (!getShortStateBytes().isEmpty()) {
+        output.writeBytes(5, getShortStateBytes());
+      }
+      if (!getShortModeBytes().isEmpty()) {
+        output.writeBytes(6, getShortModeBytes());
+      }
+      if (isArmed_ != false) {
+        output.writeBool(7, isArmed_);
+      }
       if (!getBatterySpecsBytes().isEmpty()) {
-        output.writeBytes(3, getBatterySpecsBytes());
+        output.writeBytes(8, getBatterySpecsBytes());
+      }
+      if (uptime_ != 0L) {
+        output.writeInt64(9, uptime_);
+      }
+      if (roll_ != 0D) {
+        output.writeDouble(10, roll_);
+      }
+      if (pitch_ != 0D) {
+        output.writeDouble(11, pitch_);
+      }
+      if (yaw_ != 0D) {
+        output.writeDouble(12, yaw_);
       }
     }
 
@@ -921,9 +1632,45 @@ public final class ApmPlanner {
         size += com.google.protobuf.CodedOutputStream
           .computeBytesSize(2, getNameBytes());
       }
+      if (!getSystemTypeNameBytes().isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getSystemTypeNameBytes());
+      }
+      if (!getAutopilotTypeNameBytes().isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(4, getAutopilotTypeNameBytes());
+      }
+      if (!getShortStateBytes().isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(5, getShortStateBytes());
+      }
+      if (!getShortModeBytes().isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(6, getShortModeBytes());
+      }
+      if (isArmed_ != false) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBoolSize(7, isArmed_);
+      }
       if (!getBatterySpecsBytes().isEmpty()) {
         size += com.google.protobuf.CodedOutputStream
-          .computeBytesSize(3, getBatterySpecsBytes());
+          .computeBytesSize(8, getBatterySpecsBytes());
+      }
+      if (uptime_ != 0L) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt64Size(9, uptime_);
+      }
+      if (roll_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(10, roll_);
+      }
+      if (pitch_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(11, pitch_);
+      }
+      if (yaw_ != 0D) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeDoubleSize(12, yaw_);
       }
       memoizedSerializedSize = size;
       return size;
@@ -1040,7 +1787,25 @@ public final class ApmPlanner {
 
         name_ = "";
 
+        systemTypeName_ = "";
+
+        autopilotTypeName_ = "";
+
+        shortState_ = "";
+
+        shortMode_ = "";
+
+        isArmed_ = false;
+
         batterySpecs_ = "";
+
+        uptime_ = 0L;
+
+        roll_ = 0D;
+
+        pitch_ = 0D;
+
+        yaw_ = 0D;
 
         return this;
       }
@@ -1066,7 +1831,16 @@ public final class ApmPlanner {
         com.heinemann.grpc.apmplanner.ApmPlanner.Uas result = new com.heinemann.grpc.apmplanner.ApmPlanner.Uas(this);
         result.identifier_ = identifier_;
         result.name_ = name_;
+        result.systemTypeName_ = systemTypeName_;
+        result.autopilotTypeName_ = autopilotTypeName_;
+        result.shortState_ = shortState_;
+        result.shortMode_ = shortMode_;
+        result.isArmed_ = isArmed_;
         result.batterySpecs_ = batterySpecs_;
+        result.uptime_ = uptime_;
+        result.roll_ = roll_;
+        result.pitch_ = pitch_;
+        result.yaw_ = yaw_;
         onBuilt();
         return result;
       }
@@ -1089,9 +1863,40 @@ public final class ApmPlanner {
           name_ = other.name_;
           onChanged();
         }
+        if (!other.getSystemTypeName().isEmpty()) {
+          systemTypeName_ = other.systemTypeName_;
+          onChanged();
+        }
+        if (!other.getAutopilotTypeName().isEmpty()) {
+          autopilotTypeName_ = other.autopilotTypeName_;
+          onChanged();
+        }
+        if (!other.getShortState().isEmpty()) {
+          shortState_ = other.shortState_;
+          onChanged();
+        }
+        if (!other.getShortMode().isEmpty()) {
+          shortMode_ = other.shortMode_;
+          onChanged();
+        }
+        if (other.getIsArmed() != false) {
+          setIsArmed(other.getIsArmed());
+        }
         if (!other.getBatterySpecs().isEmpty()) {
           batterySpecs_ = other.batterySpecs_;
           onChanged();
+        }
+        if (other.getUptime() != 0L) {
+          setUptime(other.getUptime());
+        }
+        if (other.getRoll() != 0D) {
+          setRoll(other.getRoll());
+        }
+        if (other.getPitch() != 0D) {
+          setPitch(other.getPitch());
+        }
+        if (other.getYaw() != 0D) {
+          setYaw(other.getYaw());
         }
         onChanged();
         return this;
@@ -1215,9 +2020,315 @@ public final class ApmPlanner {
         return this;
       }
 
+      private java.lang.Object systemTypeName_ = "";
+      /**
+       * <code>optional string systemTypeName = 3;</code>
+       */
+      public java.lang.String getSystemTypeName() {
+        java.lang.Object ref = systemTypeName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            systemTypeName_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string systemTypeName = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getSystemTypeNameBytes() {
+        java.lang.Object ref = systemTypeName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          systemTypeName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string systemTypeName = 3;</code>
+       */
+      public Builder setSystemTypeName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        systemTypeName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string systemTypeName = 3;</code>
+       */
+      public Builder clearSystemTypeName() {
+        
+        systemTypeName_ = getDefaultInstance().getSystemTypeName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string systemTypeName = 3;</code>
+       */
+      public Builder setSystemTypeNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        systemTypeName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object autopilotTypeName_ = "";
+      /**
+       * <code>optional string autopilotTypeName = 4;</code>
+       */
+      public java.lang.String getAutopilotTypeName() {
+        java.lang.Object ref = autopilotTypeName_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            autopilotTypeName_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string autopilotTypeName = 4;</code>
+       */
+      public com.google.protobuf.ByteString
+          getAutopilotTypeNameBytes() {
+        java.lang.Object ref = autopilotTypeName_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          autopilotTypeName_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string autopilotTypeName = 4;</code>
+       */
+      public Builder setAutopilotTypeName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        autopilotTypeName_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string autopilotTypeName = 4;</code>
+       */
+      public Builder clearAutopilotTypeName() {
+        
+        autopilotTypeName_ = getDefaultInstance().getAutopilotTypeName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string autopilotTypeName = 4;</code>
+       */
+      public Builder setAutopilotTypeNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        autopilotTypeName_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object shortState_ = "";
+      /**
+       * <code>optional string shortState = 5;</code>
+       */
+      public java.lang.String getShortState() {
+        java.lang.Object ref = shortState_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            shortState_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string shortState = 5;</code>
+       */
+      public com.google.protobuf.ByteString
+          getShortStateBytes() {
+        java.lang.Object ref = shortState_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          shortState_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string shortState = 5;</code>
+       */
+      public Builder setShortState(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        shortState_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string shortState = 5;</code>
+       */
+      public Builder clearShortState() {
+        
+        shortState_ = getDefaultInstance().getShortState();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string shortState = 5;</code>
+       */
+      public Builder setShortStateBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        shortState_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object shortMode_ = "";
+      /**
+       * <code>optional string shortMode = 6;</code>
+       */
+      public java.lang.String getShortMode() {
+        java.lang.Object ref = shortMode_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            shortMode_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string shortMode = 6;</code>
+       */
+      public com.google.protobuf.ByteString
+          getShortModeBytes() {
+        java.lang.Object ref = shortMode_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          shortMode_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string shortMode = 6;</code>
+       */
+      public Builder setShortMode(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        shortMode_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string shortMode = 6;</code>
+       */
+      public Builder clearShortMode() {
+        
+        shortMode_ = getDefaultInstance().getShortMode();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string shortMode = 6;</code>
+       */
+      public Builder setShortModeBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        shortMode_ = value;
+        onChanged();
+        return this;
+      }
+
+      private boolean isArmed_ ;
+      /**
+       * <code>optional bool isArmed = 7;</code>
+       */
+      public boolean getIsArmed() {
+        return isArmed_;
+      }
+      /**
+       * <code>optional bool isArmed = 7;</code>
+       */
+      public Builder setIsArmed(boolean value) {
+        
+        isArmed_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional bool isArmed = 7;</code>
+       */
+      public Builder clearIsArmed() {
+        
+        isArmed_ = false;
+        onChanged();
+        return this;
+      }
+
       private java.lang.Object batterySpecs_ = "";
       /**
-       * <code>optional string batterySpecs = 3;</code>
+       * <code>optional string batterySpecs = 8;</code>
        */
       public java.lang.String getBatterySpecs() {
         java.lang.Object ref = batterySpecs_;
@@ -1234,7 +2345,7 @@ public final class ApmPlanner {
         }
       }
       /**
-       * <code>optional string batterySpecs = 3;</code>
+       * <code>optional string batterySpecs = 8;</code>
        */
       public com.google.protobuf.ByteString
           getBatterySpecsBytes() {
@@ -1250,7 +2361,7 @@ public final class ApmPlanner {
         }
       }
       /**
-       * <code>optional string batterySpecs = 3;</code>
+       * <code>optional string batterySpecs = 8;</code>
        */
       public Builder setBatterySpecs(
           java.lang.String value) {
@@ -1263,7 +2374,7 @@ public final class ApmPlanner {
         return this;
       }
       /**
-       * <code>optional string batterySpecs = 3;</code>
+       * <code>optional string batterySpecs = 8;</code>
        */
       public Builder clearBatterySpecs() {
         
@@ -1272,7 +2383,7 @@ public final class ApmPlanner {
         return this;
       }
       /**
-       * <code>optional string batterySpecs = 3;</code>
+       * <code>optional string batterySpecs = 8;</code>
        */
       public Builder setBatterySpecsBytes(
           com.google.protobuf.ByteString value) {
@@ -1281,6 +2392,110 @@ public final class ApmPlanner {
   }
   
         batterySpecs_ = value;
+        onChanged();
+        return this;
+      }
+
+      private long uptime_ ;
+      /**
+       * <code>optional int64 uptime = 9;</code>
+       */
+      public long getUptime() {
+        return uptime_;
+      }
+      /**
+       * <code>optional int64 uptime = 9;</code>
+       */
+      public Builder setUptime(long value) {
+        
+        uptime_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int64 uptime = 9;</code>
+       */
+      public Builder clearUptime() {
+        
+        uptime_ = 0L;
+        onChanged();
+        return this;
+      }
+
+      private double roll_ ;
+      /**
+       * <code>optional double roll = 10;</code>
+       */
+      public double getRoll() {
+        return roll_;
+      }
+      /**
+       * <code>optional double roll = 10;</code>
+       */
+      public Builder setRoll(double value) {
+        
+        roll_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double roll = 10;</code>
+       */
+      public Builder clearRoll() {
+        
+        roll_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double pitch_ ;
+      /**
+       * <code>optional double pitch = 11;</code>
+       */
+      public double getPitch() {
+        return pitch_;
+      }
+      /**
+       * <code>optional double pitch = 11;</code>
+       */
+      public Builder setPitch(double value) {
+        
+        pitch_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double pitch = 11;</code>
+       */
+      public Builder clearPitch() {
+        
+        pitch_ = 0D;
+        onChanged();
+        return this;
+      }
+
+      private double yaw_ ;
+      /**
+       * <code>optional double yaw = 12;</code>
+       */
+      public double getYaw() {
+        return yaw_;
+      }
+      /**
+       * <code>optional double yaw = 12;</code>
+       */
+      public Builder setYaw(double value) {
+        
+        yaw_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional double yaw = 12;</code>
+       */
+      public Builder clearYaw() {
+        
+        yaw_ = 0D;
         onChanged();
         return this;
       }
@@ -1349,6 +2564,11 @@ public final class ApmPlanner {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_heinemann_grpc_apmplanner_UasIdentifier_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_heinemann_grpc_apmplanner_UasMode_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_heinemann_grpc_apmplanner_UasMode_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
     internal_static_com_heinemann_grpc_apmplanner_Uas_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
@@ -1364,20 +2584,29 @@ public final class ApmPlanner {
     java.lang.String[] descriptorData = {
       "\n\021apm_planner.proto\022\035com.heinemann.grpc." +
       "apmplanner\"\006\n\004Null\"#\n\rUasIdentifier\022\022\n\ni" +
-      "dentifier\030\001 \001(\005\"=\n\003Uas\022\022\n\nidentifier\030\001 \001" +
-      "(\005\022\014\n\004name\030\002 \001(\t\022\024\n\014batterySpecs\030\003 \001(\t2\217" +
-      "\003\n\nUasManager\022c\n\014getActiveUas\022#.com.hein" +
-      "emann.grpc.apmplanner.Null\032,.com.heinema" +
-      "nn.grpc.apmplanner.UasIdentifier\"\000\022c\n\014se" +
-      "tActiveUas\022,.com.heinemann.grpc.apmplann" +
-      "er.UasIdentifier\032#.com.heinemann.grpc.ap" +
-      "mplanner.Null\"\000\022\\\n\006getUas\022,.com.heineman",
-      "n.grpc.apmplanner.UasIdentifier\032\".com.he" +
-      "inemann.grpc.apmplanner.Uas\"\000\022Y\n\ngetUasL" +
-      "ist\022#.com.heinemann.grpc.apmplanner.Null" +
-      "\032\".com.heinemann.grpc.apmplanner.Uas\"\0000\001" +
-      "B,\n\035com.heinemann.grpc.apmplanner\242\002\nAPMP" +
-      "lannerb\006proto3"
+      "dentifier\030\001 \001(\005\"\027\n\007UasMode\022\014\n\004mode\030\001 \001(\005" +
+      "\"\342\001\n\003Uas\022\022\n\nidentifier\030\001 \001(\005\022\014\n\004name\030\002 \001" +
+      "(\t\022\026\n\016systemTypeName\030\003 \001(\t\022\031\n\021autopilotT" +
+      "ypeName\030\004 \001(\t\022\022\n\nshortState\030\005 \001(\t\022\021\n\tsho" +
+      "rtMode\030\006 \001(\t\022\017\n\007isArmed\030\007 \001(\010\022\024\n\014battery" +
+      "Specs\030\010 \001(\t\022\016\n\006uptime\030\t \001(\003\022\014\n\004roll\030\n \001(" +
+      "\001\022\r\n\005pitch\030\013 \001(\001\022\013\n\003yaw\030\014 \001(\0012\277\004\n\nUasMan" +
+      "ager\022c\n\014getActiveUas\022#.com.heinemann.grp",
+      "c.apmplanner.Null\032,.com.heinemann.grpc.a" +
+      "pmplanner.UasIdentifier\"\000\022c\n\014setActiveUa" +
+      "s\022,.com.heinemann.grpc.apmplanner.UasIde" +
+      "ntifier\032#.com.heinemann.grpc.apmplanner." +
+      "Null\"\000\022\\\n\006getUas\022,.com.heinemann.grpc.ap" +
+      "mplanner.UasIdentifier\032\".com.heinemann.g" +
+      "rpc.apmplanner.Uas\"\000\022Y\n\ngetUasList\022#.com" +
+      ".heinemann.grpc.apmplanner.Null\032\".com.he" +
+      "inemann.grpc.apmplanner.Uas\"\0000\001\022T\n\006reboo" +
+      "t\022#.com.heinemann.grpc.apmplanner.Null\032#",
+      ".com.heinemann.grpc.apmplanner.Null\"\000\022X\n" +
+      "\007setMode\022&.com.heinemann.grpc.apmplanner" +
+      ".UasMode\032#.com.heinemann.grpc.apmplanner" +
+      ".Null\"\000B,\n\035com.heinemann.grpc.apmplanner" +
+      "\242\002\nAPMPlannerb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -1403,12 +2632,18 @@ public final class ApmPlanner {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_heinemann_grpc_apmplanner_UasIdentifier_descriptor,
         new java.lang.String[] { "Identifier", });
-    internal_static_com_heinemann_grpc_apmplanner_Uas_descriptor =
+    internal_static_com_heinemann_grpc_apmplanner_UasMode_descriptor =
       getDescriptor().getMessageTypes().get(2);
+    internal_static_com_heinemann_grpc_apmplanner_UasMode_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_heinemann_grpc_apmplanner_UasMode_descriptor,
+        new java.lang.String[] { "Mode", });
+    internal_static_com_heinemann_grpc_apmplanner_Uas_descriptor =
+      getDescriptor().getMessageTypes().get(3);
     internal_static_com_heinemann_grpc_apmplanner_Uas_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_heinemann_grpc_apmplanner_Uas_descriptor,
-        new java.lang.String[] { "Identifier", "Name", "BatterySpecs", });
+        new java.lang.String[] { "Identifier", "Name", "SystemTypeName", "AutopilotTypeName", "ShortState", "ShortMode", "IsArmed", "BatterySpecs", "Uptime", "Roll", "Pitch", "Yaw", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)

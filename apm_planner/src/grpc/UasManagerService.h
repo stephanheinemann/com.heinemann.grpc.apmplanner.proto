@@ -17,8 +17,9 @@ using grpc::Status;
 
 using com::heinemann::grpc::apmplanner::UasManager;
 using com::heinemann::grpc::apmplanner::Null;
-using com::heinemann::grpc::apmplanner::UasIdentifier;
 using com::heinemann::grpc::apmplanner::Uas;
+using com::heinemann::grpc::apmplanner::UasIdentifier;
+using com::heinemann::grpc::apmplanner::UasMode;
 
 class UasManagerService final : public UasManager::Service {
 private:
@@ -37,13 +38,13 @@ public:
 
 	Status getActiveUas(
 			ServerContext* context,
-			const Null* none,
+			const Null* request,
 			UasIdentifier* uasIdentifier) override;
 
 	Status setActiveUas(
 			ServerContext* context,
 			const UasIdentifier* uasIdentifier,
-			Null* none) override;
+			Null* response) override;
 
 	Status getUas(
 			ServerContext* context,
@@ -52,8 +53,18 @@ public:
 
 	Status getUasList(
 			ServerContext* context,
-			const Null* none,
+			const Null* request,
 			ServerWriter<Uas>* uasWriter) override;
+
+	Status reboot(
+			ServerContext* context,
+			const Null* request,
+			Null* response) override;
+
+	Status setMode(
+			ServerContext* context,
+			const UasMode* mode,
+			Null* response) override;
 };
 
 #endif /* UASMANAGERSERVICE_H_ */

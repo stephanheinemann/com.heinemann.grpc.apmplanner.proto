@@ -10,6 +10,9 @@ service UasManager {
 	rpc setActiveUas(UasIdentifier) returns (Null) {}
 	rpc getUas(UasIdentifier) returns (Uas) {}
 	rpc getUasList(Null) returns (stream Uas) {}
+	
+	rpc reboot(Null) returns (Null) {}
+	rpc setMode(UasMode) returns (Null) {}
 }
 
 message Null {
@@ -19,8 +22,21 @@ message UasIdentifier {
 	int32 identifier = 1;
 }
 
+message UasMode {
+	int32 mode = 1;
+}
+
 message Uas {
 	int32 identifier = 1;
 	string name = 2;
-	string batterySpecs = 3;
+	string systemTypeName = 3;
+	string autopilotTypeName = 4;
+	string shortState = 5;
+	string shortMode = 6;
+	bool isArmed = 7;
+	string batterySpecs = 8;
+	int64 uptime = 9;
+	double roll = 10;
+	double pitch = 11;
+	double yaw = 12;
 }
