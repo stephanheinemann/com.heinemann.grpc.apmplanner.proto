@@ -320,8 +320,8 @@ public final class ApmPlanner {
 
   }
 
-  public interface UASOrBuilder extends
-      // @@protoc_insertion_point(interface_extends:com.heinemann.grpc.apmplanner.UAS)
+  public interface UasIdentifierOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.heinemann.grpc.apmplanner.UasIdentifier)
       com.google.protobuf.MessageOrBuilder {
 
     /**
@@ -330,17 +330,17 @@ public final class ApmPlanner {
     int getIdentifier();
   }
   /**
-   * Protobuf type {@code com.heinemann.grpc.apmplanner.UAS}
+   * Protobuf type {@code com.heinemann.grpc.apmplanner.UasIdentifier}
    */
-  public  static final class UAS extends
+  public  static final class UasIdentifier extends
       com.google.protobuf.GeneratedMessage implements
-      // @@protoc_insertion_point(message_implements:com.heinemann.grpc.apmplanner.UAS)
-      UASOrBuilder {
-    // Use UAS.newBuilder() to construct.
-    private UAS(com.google.protobuf.GeneratedMessage.Builder builder) {
+      // @@protoc_insertion_point(message_implements:com.heinemann.grpc.apmplanner.UasIdentifier)
+      UasIdentifierOrBuilder {
+    // Use UasIdentifier.newBuilder() to construct.
+    private UasIdentifier(com.google.protobuf.GeneratedMessage.Builder builder) {
       super(builder);
     }
-    private UAS() {
+    private UasIdentifier() {
       identifier_ = 0;
     }
 
@@ -349,7 +349,7 @@ public final class ApmPlanner {
     getUnknownFields() {
       return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
     }
-    private UAS(
+    private UasIdentifier(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
       this();
@@ -387,14 +387,14 @@ public final class ApmPlanner {
     }
     public static final com.google.protobuf.Descriptors.Descriptor
         getDescriptor() {
-      return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_UAS_descriptor;
+      return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_UasIdentifier_descriptor;
     }
 
     protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
         internalGetFieldAccessorTable() {
-      return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_UAS_fieldAccessorTable
+      return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_UasIdentifier_fieldAccessorTable
           .ensureFieldAccessorsInitialized(
-              com.heinemann.grpc.apmplanner.ApmPlanner.UAS.class, com.heinemann.grpc.apmplanner.ApmPlanner.UAS.Builder.class);
+              com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier.class, com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier.Builder.class);
     }
 
     public static final int IDENTIFIER_FIELD_NUMBER = 1;
@@ -438,53 +438,53 @@ public final class ApmPlanner {
     }
 
     private static final long serialVersionUID = 0L;
-    public static com.heinemann.grpc.apmplanner.ApmPlanner.UAS parseFrom(
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier parseFrom(
         com.google.protobuf.ByteString data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.heinemann.grpc.apmplanner.ApmPlanner.UAS parseFrom(
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier parseFrom(
         com.google.protobuf.ByteString data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.heinemann.grpc.apmplanner.ApmPlanner.UAS parseFrom(byte[] data)
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier parseFrom(byte[] data)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data);
     }
-    public static com.heinemann.grpc.apmplanner.ApmPlanner.UAS parseFrom(
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier parseFrom(
         byte[] data,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws com.google.protobuf.InvalidProtocolBufferException {
       return PARSER.parseFrom(data, extensionRegistry);
     }
-    public static com.heinemann.grpc.apmplanner.ApmPlanner.UAS parseFrom(java.io.InputStream input)
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier parseFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.heinemann.grpc.apmplanner.ApmPlanner.UAS parseFrom(
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier parseFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseFrom(input, extensionRegistry);
     }
-    public static com.heinemann.grpc.apmplanner.ApmPlanner.UAS parseDelimitedFrom(java.io.InputStream input)
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier parseDelimitedFrom(java.io.InputStream input)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input);
     }
-    public static com.heinemann.grpc.apmplanner.ApmPlanner.UAS parseDelimitedFrom(
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier parseDelimitedFrom(
         java.io.InputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
       return PARSER.parseDelimitedFrom(input, extensionRegistry);
     }
-    public static com.heinemann.grpc.apmplanner.ApmPlanner.UAS parseFrom(
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier parseFrom(
         com.google.protobuf.CodedInputStream input)
         throws java.io.IOException {
       return PARSER.parseFrom(input);
     }
-    public static com.heinemann.grpc.apmplanner.ApmPlanner.UAS parseFrom(
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier parseFrom(
         com.google.protobuf.CodedInputStream input,
         com.google.protobuf.ExtensionRegistryLite extensionRegistry)
         throws java.io.IOException {
@@ -495,7 +495,7 @@ public final class ApmPlanner {
     public static Builder newBuilder() {
       return DEFAULT_INSTANCE.toBuilder();
     }
-    public static Builder newBuilder(com.heinemann.grpc.apmplanner.ApmPlanner.UAS prototype) {
+    public static Builder newBuilder(com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier prototype) {
       return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
     }
     public Builder toBuilder() {
@@ -510,25 +510,25 @@ public final class ApmPlanner {
       return builder;
     }
     /**
-     * Protobuf type {@code com.heinemann.grpc.apmplanner.UAS}
+     * Protobuf type {@code com.heinemann.grpc.apmplanner.UasIdentifier}
      */
     public static final class Builder extends
         com.google.protobuf.GeneratedMessage.Builder<Builder> implements
-        // @@protoc_insertion_point(builder_implements:com.heinemann.grpc.apmplanner.UAS)
-        com.heinemann.grpc.apmplanner.ApmPlanner.UASOrBuilder {
+        // @@protoc_insertion_point(builder_implements:com.heinemann.grpc.apmplanner.UasIdentifier)
+        com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifierOrBuilder {
       public static final com.google.protobuf.Descriptors.Descriptor
           getDescriptor() {
-        return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_UAS_descriptor;
+        return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_UasIdentifier_descriptor;
       }
 
       protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
           internalGetFieldAccessorTable() {
-        return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_UAS_fieldAccessorTable
+        return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_UasIdentifier_fieldAccessorTable
             .ensureFieldAccessorsInitialized(
-                com.heinemann.grpc.apmplanner.ApmPlanner.UAS.class, com.heinemann.grpc.apmplanner.ApmPlanner.UAS.Builder.class);
+                com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier.class, com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier.Builder.class);
       }
 
-      // Construct using com.heinemann.grpc.apmplanner.ApmPlanner.UAS.newBuilder()
+      // Construct using com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier.newBuilder()
       private Builder() {
         maybeForceBuilderInitialization();
       }
@@ -551,39 +551,39 @@ public final class ApmPlanner {
 
       public com.google.protobuf.Descriptors.Descriptor
           getDescriptorForType() {
-        return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_UAS_descriptor;
+        return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_UasIdentifier_descriptor;
       }
 
-      public com.heinemann.grpc.apmplanner.ApmPlanner.UAS getDefaultInstanceForType() {
-        return com.heinemann.grpc.apmplanner.ApmPlanner.UAS.getDefaultInstance();
+      public com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier getDefaultInstanceForType() {
+        return com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier.getDefaultInstance();
       }
 
-      public com.heinemann.grpc.apmplanner.ApmPlanner.UAS build() {
-        com.heinemann.grpc.apmplanner.ApmPlanner.UAS result = buildPartial();
+      public com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier build() {
+        com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier result = buildPartial();
         if (!result.isInitialized()) {
           throw newUninitializedMessageException(result);
         }
         return result;
       }
 
-      public com.heinemann.grpc.apmplanner.ApmPlanner.UAS buildPartial() {
-        com.heinemann.grpc.apmplanner.ApmPlanner.UAS result = new com.heinemann.grpc.apmplanner.ApmPlanner.UAS(this);
+      public com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier buildPartial() {
+        com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier result = new com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier(this);
         result.identifier_ = identifier_;
         onBuilt();
         return result;
       }
 
       public Builder mergeFrom(com.google.protobuf.Message other) {
-        if (other instanceof com.heinemann.grpc.apmplanner.ApmPlanner.UAS) {
-          return mergeFrom((com.heinemann.grpc.apmplanner.ApmPlanner.UAS)other);
+        if (other instanceof com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier) {
+          return mergeFrom((com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier)other);
         } else {
           super.mergeFrom(other);
           return this;
         }
       }
 
-      public Builder mergeFrom(com.heinemann.grpc.apmplanner.ApmPlanner.UAS other) {
-        if (other == com.heinemann.grpc.apmplanner.ApmPlanner.UAS.getDefaultInstance()) return this;
+      public Builder mergeFrom(com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier other) {
+        if (other == com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier.getDefaultInstance()) return this;
         if (other.getIdentifier() != 0) {
           setIdentifier(other.getIdentifier());
         }
@@ -599,11 +599,11 @@ public final class ApmPlanner {
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws java.io.IOException {
-        com.heinemann.grpc.apmplanner.ApmPlanner.UAS parsedMessage = null;
+        com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier parsedMessage = null;
         try {
           parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
         } catch (com.google.protobuf.InvalidProtocolBufferException e) {
-          parsedMessage = (com.heinemann.grpc.apmplanner.ApmPlanner.UAS) e.getUnfinishedMessage();
+          parsedMessage = (com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier) e.getUnfinishedMessage();
           throw e;
         } finally {
           if (parsedMessage != null) {
@@ -649,27 +649,27 @@ public final class ApmPlanner {
       }
 
 
-      // @@protoc_insertion_point(builder_scope:com.heinemann.grpc.apmplanner.UAS)
+      // @@protoc_insertion_point(builder_scope:com.heinemann.grpc.apmplanner.UasIdentifier)
     }
 
-    // @@protoc_insertion_point(class_scope:com.heinemann.grpc.apmplanner.UAS)
-    private static final com.heinemann.grpc.apmplanner.ApmPlanner.UAS DEFAULT_INSTANCE;
+    // @@protoc_insertion_point(class_scope:com.heinemann.grpc.apmplanner.UasIdentifier)
+    private static final com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier DEFAULT_INSTANCE;
     static {
-      DEFAULT_INSTANCE = new com.heinemann.grpc.apmplanner.ApmPlanner.UAS();
+      DEFAULT_INSTANCE = new com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier();
     }
 
-    public static com.heinemann.grpc.apmplanner.ApmPlanner.UAS getDefaultInstance() {
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier getDefaultInstance() {
       return DEFAULT_INSTANCE;
     }
 
-    public static final com.google.protobuf.Parser<UAS> PARSER =
-        new com.google.protobuf.AbstractParser<UAS>() {
-      public UAS parsePartialFrom(
+    public static final com.google.protobuf.Parser<UasIdentifier> PARSER =
+        new com.google.protobuf.AbstractParser<UasIdentifier>() {
+      public UasIdentifier parsePartialFrom(
           com.google.protobuf.CodedInputStream input,
           com.google.protobuf.ExtensionRegistryLite extensionRegistry)
           throws com.google.protobuf.InvalidProtocolBufferException {
         try {
-          return new UAS(input, extensionRegistry);
+          return new UasIdentifier(input, extensionRegistry);
         } catch (RuntimeException e) {
           if (e.getCause() instanceof
               com.google.protobuf.InvalidProtocolBufferException) {
@@ -682,11 +682,657 @@ public final class ApmPlanner {
     };
 
     @java.lang.Override
-    public com.google.protobuf.Parser<UAS> getParserForType() {
+    public com.google.protobuf.Parser<UasIdentifier> getParserForType() {
       return PARSER;
     }
 
-    public com.heinemann.grpc.apmplanner.ApmPlanner.UAS getDefaultInstanceForType() {
+    public com.heinemann.grpc.apmplanner.ApmPlanner.UasIdentifier getDefaultInstanceForType() {
+      return DEFAULT_INSTANCE;
+    }
+
+  }
+
+  public interface UasOrBuilder extends
+      // @@protoc_insertion_point(interface_extends:com.heinemann.grpc.apmplanner.Uas)
+      com.google.protobuf.MessageOrBuilder {
+
+    /**
+     * <code>optional int32 identifier = 1;</code>
+     */
+    int getIdentifier();
+
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    java.lang.String getName();
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    com.google.protobuf.ByteString
+        getNameBytes();
+
+    /**
+     * <code>optional string batterySpecs = 3;</code>
+     */
+    java.lang.String getBatterySpecs();
+    /**
+     * <code>optional string batterySpecs = 3;</code>
+     */
+    com.google.protobuf.ByteString
+        getBatterySpecsBytes();
+  }
+  /**
+   * Protobuf type {@code com.heinemann.grpc.apmplanner.Uas}
+   */
+  public  static final class Uas extends
+      com.google.protobuf.GeneratedMessage implements
+      // @@protoc_insertion_point(message_implements:com.heinemann.grpc.apmplanner.Uas)
+      UasOrBuilder {
+    // Use Uas.newBuilder() to construct.
+    private Uas(com.google.protobuf.GeneratedMessage.Builder builder) {
+      super(builder);
+    }
+    private Uas() {
+      identifier_ = 0;
+      name_ = "";
+      batterySpecs_ = "";
+    }
+
+    @java.lang.Override
+    public final com.google.protobuf.UnknownFieldSet
+    getUnknownFields() {
+      return com.google.protobuf.UnknownFieldSet.getDefaultInstance();
+    }
+    private Uas(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry) {
+      this();
+      int mutable_bitField0_ = 0;
+      try {
+        boolean done = false;
+        while (!done) {
+          int tag = input.readTag();
+          switch (tag) {
+            case 0:
+              done = true;
+              break;
+            default: {
+              if (!input.skipField(tag)) {
+                done = true;
+              }
+              break;
+            }
+            case 8: {
+
+              identifier_ = input.readInt32();
+              break;
+            }
+            case 18: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+
+              name_ = bs;
+              break;
+            }
+            case 26: {
+              com.google.protobuf.ByteString bs = input.readBytes();
+
+              batterySpecs_ = bs;
+              break;
+            }
+          }
+        }
+      } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+        throw new RuntimeException(e.setUnfinishedMessage(this));
+      } catch (java.io.IOException e) {
+        throw new RuntimeException(
+            new com.google.protobuf.InvalidProtocolBufferException(
+                e.getMessage()).setUnfinishedMessage(this));
+      } finally {
+        makeExtensionsImmutable();
+      }
+    }
+    public static final com.google.protobuf.Descriptors.Descriptor
+        getDescriptor() {
+      return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_Uas_descriptor;
+    }
+
+    protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+        internalGetFieldAccessorTable() {
+      return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_Uas_fieldAccessorTable
+          .ensureFieldAccessorsInitialized(
+              com.heinemann.grpc.apmplanner.ApmPlanner.Uas.class, com.heinemann.grpc.apmplanner.ApmPlanner.Uas.Builder.class);
+    }
+
+    public static final int IDENTIFIER_FIELD_NUMBER = 1;
+    private int identifier_;
+    /**
+     * <code>optional int32 identifier = 1;</code>
+     */
+    public int getIdentifier() {
+      return identifier_;
+    }
+
+    public static final int NAME_FIELD_NUMBER = 2;
+    private volatile java.lang.Object name_;
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    public java.lang.String getName() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          name_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string name = 2;</code>
+     */
+    public com.google.protobuf.ByteString
+        getNameBytes() {
+      java.lang.Object ref = name_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        name_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    public static final int BATTERYSPECS_FIELD_NUMBER = 3;
+    private volatile java.lang.Object batterySpecs_;
+    /**
+     * <code>optional string batterySpecs = 3;</code>
+     */
+    public java.lang.String getBatterySpecs() {
+      java.lang.Object ref = batterySpecs_;
+      if (ref instanceof java.lang.String) {
+        return (java.lang.String) ref;
+      } else {
+        com.google.protobuf.ByteString bs = 
+            (com.google.protobuf.ByteString) ref;
+        java.lang.String s = bs.toStringUtf8();
+        if (bs.isValidUtf8()) {
+          batterySpecs_ = s;
+        }
+        return s;
+      }
+    }
+    /**
+     * <code>optional string batterySpecs = 3;</code>
+     */
+    public com.google.protobuf.ByteString
+        getBatterySpecsBytes() {
+      java.lang.Object ref = batterySpecs_;
+      if (ref instanceof java.lang.String) {
+        com.google.protobuf.ByteString b = 
+            com.google.protobuf.ByteString.copyFromUtf8(
+                (java.lang.String) ref);
+        batterySpecs_ = b;
+        return b;
+      } else {
+        return (com.google.protobuf.ByteString) ref;
+      }
+    }
+
+    private byte memoizedIsInitialized = -1;
+    public final boolean isInitialized() {
+      byte isInitialized = memoizedIsInitialized;
+      if (isInitialized == 1) return true;
+      if (isInitialized == 0) return false;
+
+      memoizedIsInitialized = 1;
+      return true;
+    }
+
+    public void writeTo(com.google.protobuf.CodedOutputStream output)
+                        throws java.io.IOException {
+      if (identifier_ != 0) {
+        output.writeInt32(1, identifier_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        output.writeBytes(2, getNameBytes());
+      }
+      if (!getBatterySpecsBytes().isEmpty()) {
+        output.writeBytes(3, getBatterySpecsBytes());
+      }
+    }
+
+    private int memoizedSerializedSize = -1;
+    public int getSerializedSize() {
+      int size = memoizedSerializedSize;
+      if (size != -1) return size;
+
+      size = 0;
+      if (identifier_ != 0) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeInt32Size(1, identifier_);
+      }
+      if (!getNameBytes().isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(2, getNameBytes());
+      }
+      if (!getBatterySpecsBytes().isEmpty()) {
+        size += com.google.protobuf.CodedOutputStream
+          .computeBytesSize(3, getBatterySpecsBytes());
+      }
+      memoizedSerializedSize = size;
+      return size;
+    }
+
+    private static final long serialVersionUID = 0L;
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.Uas parseFrom(
+        com.google.protobuf.ByteString data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.Uas parseFrom(
+        com.google.protobuf.ByteString data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.Uas parseFrom(byte[] data)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data);
+    }
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.Uas parseFrom(
+        byte[] data,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws com.google.protobuf.InvalidProtocolBufferException {
+      return PARSER.parseFrom(data, extensionRegistry);
+    }
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.Uas parseFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.Uas parseFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.Uas parseDelimitedFrom(java.io.InputStream input)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input);
+    }
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.Uas parseDelimitedFrom(
+        java.io.InputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseDelimitedFrom(input, extensionRegistry);
+    }
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.Uas parseFrom(
+        com.google.protobuf.CodedInputStream input)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input);
+    }
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.Uas parseFrom(
+        com.google.protobuf.CodedInputStream input,
+        com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+        throws java.io.IOException {
+      return PARSER.parseFrom(input, extensionRegistry);
+    }
+
+    public Builder newBuilderForType() { return newBuilder(); }
+    public static Builder newBuilder() {
+      return DEFAULT_INSTANCE.toBuilder();
+    }
+    public static Builder newBuilder(com.heinemann.grpc.apmplanner.ApmPlanner.Uas prototype) {
+      return DEFAULT_INSTANCE.toBuilder().mergeFrom(prototype);
+    }
+    public Builder toBuilder() {
+      return this == DEFAULT_INSTANCE
+          ? new Builder() : new Builder().mergeFrom(this);
+    }
+
+    @java.lang.Override
+    protected Builder newBuilderForType(
+        com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+      Builder builder = new Builder(parent);
+      return builder;
+    }
+    /**
+     * Protobuf type {@code com.heinemann.grpc.apmplanner.Uas}
+     */
+    public static final class Builder extends
+        com.google.protobuf.GeneratedMessage.Builder<Builder> implements
+        // @@protoc_insertion_point(builder_implements:com.heinemann.grpc.apmplanner.Uas)
+        com.heinemann.grpc.apmplanner.ApmPlanner.UasOrBuilder {
+      public static final com.google.protobuf.Descriptors.Descriptor
+          getDescriptor() {
+        return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_Uas_descriptor;
+      }
+
+      protected com.google.protobuf.GeneratedMessage.FieldAccessorTable
+          internalGetFieldAccessorTable() {
+        return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_Uas_fieldAccessorTable
+            .ensureFieldAccessorsInitialized(
+                com.heinemann.grpc.apmplanner.ApmPlanner.Uas.class, com.heinemann.grpc.apmplanner.ApmPlanner.Uas.Builder.class);
+      }
+
+      // Construct using com.heinemann.grpc.apmplanner.ApmPlanner.Uas.newBuilder()
+      private Builder() {
+        maybeForceBuilderInitialization();
+      }
+
+      private Builder(
+          com.google.protobuf.GeneratedMessage.BuilderParent parent) {
+        super(parent);
+        maybeForceBuilderInitialization();
+      }
+      private void maybeForceBuilderInitialization() {
+        if (com.google.protobuf.GeneratedMessage.alwaysUseFieldBuilders) {
+        }
+      }
+      public Builder clear() {
+        super.clear();
+        identifier_ = 0;
+
+        name_ = "";
+
+        batterySpecs_ = "";
+
+        return this;
+      }
+
+      public com.google.protobuf.Descriptors.Descriptor
+          getDescriptorForType() {
+        return com.heinemann.grpc.apmplanner.ApmPlanner.internal_static_com_heinemann_grpc_apmplanner_Uas_descriptor;
+      }
+
+      public com.heinemann.grpc.apmplanner.ApmPlanner.Uas getDefaultInstanceForType() {
+        return com.heinemann.grpc.apmplanner.ApmPlanner.Uas.getDefaultInstance();
+      }
+
+      public com.heinemann.grpc.apmplanner.ApmPlanner.Uas build() {
+        com.heinemann.grpc.apmplanner.ApmPlanner.Uas result = buildPartial();
+        if (!result.isInitialized()) {
+          throw newUninitializedMessageException(result);
+        }
+        return result;
+      }
+
+      public com.heinemann.grpc.apmplanner.ApmPlanner.Uas buildPartial() {
+        com.heinemann.grpc.apmplanner.ApmPlanner.Uas result = new com.heinemann.grpc.apmplanner.ApmPlanner.Uas(this);
+        result.identifier_ = identifier_;
+        result.name_ = name_;
+        result.batterySpecs_ = batterySpecs_;
+        onBuilt();
+        return result;
+      }
+
+      public Builder mergeFrom(com.google.protobuf.Message other) {
+        if (other instanceof com.heinemann.grpc.apmplanner.ApmPlanner.Uas) {
+          return mergeFrom((com.heinemann.grpc.apmplanner.ApmPlanner.Uas)other);
+        } else {
+          super.mergeFrom(other);
+          return this;
+        }
+      }
+
+      public Builder mergeFrom(com.heinemann.grpc.apmplanner.ApmPlanner.Uas other) {
+        if (other == com.heinemann.grpc.apmplanner.ApmPlanner.Uas.getDefaultInstance()) return this;
+        if (other.getIdentifier() != 0) {
+          setIdentifier(other.getIdentifier());
+        }
+        if (!other.getName().isEmpty()) {
+          name_ = other.name_;
+          onChanged();
+        }
+        if (!other.getBatterySpecs().isEmpty()) {
+          batterySpecs_ = other.batterySpecs_;
+          onChanged();
+        }
+        onChanged();
+        return this;
+      }
+
+      public final boolean isInitialized() {
+        return true;
+      }
+
+      public Builder mergeFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws java.io.IOException {
+        com.heinemann.grpc.apmplanner.ApmPlanner.Uas parsedMessage = null;
+        try {
+          parsedMessage = PARSER.parsePartialFrom(input, extensionRegistry);
+        } catch (com.google.protobuf.InvalidProtocolBufferException e) {
+          parsedMessage = (com.heinemann.grpc.apmplanner.ApmPlanner.Uas) e.getUnfinishedMessage();
+          throw e;
+        } finally {
+          if (parsedMessage != null) {
+            mergeFrom(parsedMessage);
+          }
+        }
+        return this;
+      }
+
+      private int identifier_ ;
+      /**
+       * <code>optional int32 identifier = 1;</code>
+       */
+      public int getIdentifier() {
+        return identifier_;
+      }
+      /**
+       * <code>optional int32 identifier = 1;</code>
+       */
+      public Builder setIdentifier(int value) {
+        
+        identifier_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional int32 identifier = 1;</code>
+       */
+      public Builder clearIdentifier() {
+        
+        identifier_ = 0;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object name_ = "";
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public java.lang.String getName() {
+        java.lang.Object ref = name_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            name_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public com.google.protobuf.ByteString
+          getNameBytes() {
+        java.lang.Object ref = name_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          name_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public Builder setName(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public Builder clearName() {
+        
+        name_ = getDefaultInstance().getName();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string name = 2;</code>
+       */
+      public Builder setNameBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        name_ = value;
+        onChanged();
+        return this;
+      }
+
+      private java.lang.Object batterySpecs_ = "";
+      /**
+       * <code>optional string batterySpecs = 3;</code>
+       */
+      public java.lang.String getBatterySpecs() {
+        java.lang.Object ref = batterySpecs_;
+        if (!(ref instanceof java.lang.String)) {
+          com.google.protobuf.ByteString bs =
+              (com.google.protobuf.ByteString) ref;
+          java.lang.String s = bs.toStringUtf8();
+          if (bs.isValidUtf8()) {
+            batterySpecs_ = s;
+          }
+          return s;
+        } else {
+          return (java.lang.String) ref;
+        }
+      }
+      /**
+       * <code>optional string batterySpecs = 3;</code>
+       */
+      public com.google.protobuf.ByteString
+          getBatterySpecsBytes() {
+        java.lang.Object ref = batterySpecs_;
+        if (ref instanceof String) {
+          com.google.protobuf.ByteString b = 
+              com.google.protobuf.ByteString.copyFromUtf8(
+                  (java.lang.String) ref);
+          batterySpecs_ = b;
+          return b;
+        } else {
+          return (com.google.protobuf.ByteString) ref;
+        }
+      }
+      /**
+       * <code>optional string batterySpecs = 3;</code>
+       */
+      public Builder setBatterySpecs(
+          java.lang.String value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        batterySpecs_ = value;
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string batterySpecs = 3;</code>
+       */
+      public Builder clearBatterySpecs() {
+        
+        batterySpecs_ = getDefaultInstance().getBatterySpecs();
+        onChanged();
+        return this;
+      }
+      /**
+       * <code>optional string batterySpecs = 3;</code>
+       */
+      public Builder setBatterySpecsBytes(
+          com.google.protobuf.ByteString value) {
+        if (value == null) {
+    throw new NullPointerException();
+  }
+  
+        batterySpecs_ = value;
+        onChanged();
+        return this;
+      }
+      public final Builder setUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+      public final Builder mergeUnknownFields(
+          final com.google.protobuf.UnknownFieldSet unknownFields) {
+        return this;
+      }
+
+
+      // @@protoc_insertion_point(builder_scope:com.heinemann.grpc.apmplanner.Uas)
+    }
+
+    // @@protoc_insertion_point(class_scope:com.heinemann.grpc.apmplanner.Uas)
+    private static final com.heinemann.grpc.apmplanner.ApmPlanner.Uas DEFAULT_INSTANCE;
+    static {
+      DEFAULT_INSTANCE = new com.heinemann.grpc.apmplanner.ApmPlanner.Uas();
+    }
+
+    public static com.heinemann.grpc.apmplanner.ApmPlanner.Uas getDefaultInstance() {
+      return DEFAULT_INSTANCE;
+    }
+
+    public static final com.google.protobuf.Parser<Uas> PARSER =
+        new com.google.protobuf.AbstractParser<Uas>() {
+      public Uas parsePartialFrom(
+          com.google.protobuf.CodedInputStream input,
+          com.google.protobuf.ExtensionRegistryLite extensionRegistry)
+          throws com.google.protobuf.InvalidProtocolBufferException {
+        try {
+          return new Uas(input, extensionRegistry);
+        } catch (RuntimeException e) {
+          if (e.getCause() instanceof
+              com.google.protobuf.InvalidProtocolBufferException) {
+            throw (com.google.protobuf.InvalidProtocolBufferException)
+                e.getCause();
+          }
+          throw e;
+        }
+      }
+    };
+
+    @java.lang.Override
+    public com.google.protobuf.Parser<Uas> getParserForType() {
+      return PARSER;
+    }
+
+    public com.heinemann.grpc.apmplanner.ApmPlanner.Uas getDefaultInstanceForType() {
       return DEFAULT_INSTANCE;
     }
 
@@ -698,10 +1344,15 @@ public final class ApmPlanner {
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
       internal_static_com_heinemann_grpc_apmplanner_Null_fieldAccessorTable;
   private static com.google.protobuf.Descriptors.Descriptor
-    internal_static_com_heinemann_grpc_apmplanner_UAS_descriptor;
+    internal_static_com_heinemann_grpc_apmplanner_UasIdentifier_descriptor;
   private static
     com.google.protobuf.GeneratedMessage.FieldAccessorTable
-      internal_static_com_heinemann_grpc_apmplanner_UAS_fieldAccessorTable;
+      internal_static_com_heinemann_grpc_apmplanner_UasIdentifier_fieldAccessorTable;
+  private static com.google.protobuf.Descriptors.Descriptor
+    internal_static_com_heinemann_grpc_apmplanner_Uas_descriptor;
+  private static
+    com.google.protobuf.GeneratedMessage.FieldAccessorTable
+      internal_static_com_heinemann_grpc_apmplanner_Uas_fieldAccessorTable;
 
   public static com.google.protobuf.Descriptors.FileDescriptor
       getDescriptor() {
@@ -712,12 +1363,21 @@ public final class ApmPlanner {
   static {
     java.lang.String[] descriptorData = {
       "\n\021apm_planner.proto\022\035com.heinemann.grpc." +
-      "apmplanner\"\006\n\004Null\"\031\n\003UAS\022\022\n\nidentifier\030" +
-      "\001 \001(\0052g\n\nUASManager\022Y\n\014GetActiveUAS\022#.co" +
-      "m.heinemann.grpc.apmplanner.Null\032\".com.h" +
-      "einemann.grpc.apmplanner.UAS\"\000B,\n\035com.he" +
-      "inemann.grpc.apmplanner\242\002\nAPMPlannerb\006pr" +
-      "oto3"
+      "apmplanner\"\006\n\004Null\"#\n\rUasIdentifier\022\022\n\ni" +
+      "dentifier\030\001 \001(\005\"=\n\003Uas\022\022\n\nidentifier\030\001 \001" +
+      "(\005\022\014\n\004name\030\002 \001(\t\022\024\n\014batterySpecs\030\003 \001(\t2\217" +
+      "\003\n\nUasManager\022c\n\014getActiveUas\022#.com.hein" +
+      "emann.grpc.apmplanner.Null\032,.com.heinema" +
+      "nn.grpc.apmplanner.UasIdentifier\"\000\022c\n\014se" +
+      "tActiveUas\022,.com.heinemann.grpc.apmplann" +
+      "er.UasIdentifier\032#.com.heinemann.grpc.ap" +
+      "mplanner.Null\"\000\022\\\n\006getUas\022,.com.heineman",
+      "n.grpc.apmplanner.UasIdentifier\032\".com.he" +
+      "inemann.grpc.apmplanner.Uas\"\000\022Y\n\ngetUasL" +
+      "ist\022#.com.heinemann.grpc.apmplanner.Null" +
+      "\032\".com.heinemann.grpc.apmplanner.Uas\"\0000\001" +
+      "B,\n\035com.heinemann.grpc.apmplanner\242\002\nAPMP" +
+      "lannerb\006proto3"
     };
     com.google.protobuf.Descriptors.FileDescriptor.InternalDescriptorAssigner assigner =
         new com.google.protobuf.Descriptors.FileDescriptor.    InternalDescriptorAssigner() {
@@ -737,12 +1397,18 @@ public final class ApmPlanner {
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
         internal_static_com_heinemann_grpc_apmplanner_Null_descriptor,
         new java.lang.String[] { });
-    internal_static_com_heinemann_grpc_apmplanner_UAS_descriptor =
+    internal_static_com_heinemann_grpc_apmplanner_UasIdentifier_descriptor =
       getDescriptor().getMessageTypes().get(1);
-    internal_static_com_heinemann_grpc_apmplanner_UAS_fieldAccessorTable = new
+    internal_static_com_heinemann_grpc_apmplanner_UasIdentifier_fieldAccessorTable = new
       com.google.protobuf.GeneratedMessage.FieldAccessorTable(
-        internal_static_com_heinemann_grpc_apmplanner_UAS_descriptor,
+        internal_static_com_heinemann_grpc_apmplanner_UasIdentifier_descriptor,
         new java.lang.String[] { "Identifier", });
+    internal_static_com_heinemann_grpc_apmplanner_Uas_descriptor =
+      getDescriptor().getMessageTypes().get(2);
+    internal_static_com_heinemann_grpc_apmplanner_Uas_fieldAccessorTable = new
+      com.google.protobuf.GeneratedMessage.FieldAccessorTable(
+        internal_static_com_heinemann_grpc_apmplanner_Uas_descriptor,
+        new java.lang.String[] { "Identifier", "Name", "BatterySpecs", });
   }
 
   // @@protoc_insertion_point(outer_class_scope)
