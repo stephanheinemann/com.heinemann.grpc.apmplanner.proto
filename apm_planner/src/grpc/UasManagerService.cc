@@ -35,9 +35,9 @@ Status UasManagerService::getActiveUas(
 	int identifier = -1;
 	uasIdentifier->set_identifier(identifier);
 
-	UASInterface* activeUAS = UASManager::instance()->getActiveUAS();
-	if (NULL != activeUAS) {
-		uasIdentifier->set_identifier(activeUAS->getUASID());
+	UASInterface* uasIf = UASManager::instance()->getActiveUAS();
+	if (NULL != uasIf) {
+		uasIdentifier->set_identifier(uasIf->getUASID());
 		status = Status::OK;
 	}
 
@@ -51,13 +51,52 @@ Status UasManagerService::setActiveUas(
 
 	(void) context;
 	(void) none;
-	return Status::OK;
+	Status status = Status(StatusCode::NOT_FOUND, DETAILS_NOT_FOUND);
+
+	UASInterface* uasIf = UASManager::instance()->getUASForId(uasIdentifier->identifier());
+	if (NULL != uasIf) {
+		UASManager::instance()->setActiveUAS(uasIf);
+		status = Status::OK;
+	}
+
+	return status;
 }
 
-Status UasManagerService::getUasStream(
-			ServerContext* context,
-			const UasIdentifier* uasIdentifier,
-			ServerWriter<Uas>* uasStream) {
+Status UasManagerService::getUas(
+		ServerContext* context,
+		const UasIdentifier* uasIdentifier,
+		Uas* uas) {
+
+	(void) context;
+	Status status = Status(StatusCode::NOT_FOUND, DETAILS_NOT_FOUND);
+
+	UASInterface* uasIf = UASManager::instance()->getUASForId(uasIdentifier->identifier());
+	if (NULL != uasIf) {
+		uas->set_identifier(uasIf->getUASID());
+		uas->set_name(uasIf->getUASName().toStdString());
+		uas->set_batteryspecs(uasIf->getBatterySpecs().toStdString());
+		status = Status::OK;
+	}
+
+	return status;
+}
+
+Status UasManagerService::getUasList(
+		ServerContext* context,
+		const Null* none,
+		ServerWriter<Uas>* uasWriter) {
+
+	(void) context;
+	(void) none;
+	Uas uas;
+
+	for (UASInterface* uasIf  : UASManager::instance()->getUASList()) {
+		uas.set_identifier(uasIf->getUASID());
+		uas.set_name(uasIf->getUASName().toStdString());
+		uas.set_batteryspecs(uasIf->getBatterySpecs().toStdString());
+		uasWriter->Write(uas);
+	}
+
 	return Status::OK;
 }
 

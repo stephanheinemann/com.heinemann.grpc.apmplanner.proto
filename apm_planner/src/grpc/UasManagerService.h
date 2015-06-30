@@ -45,10 +45,15 @@ public:
 			const UasIdentifier* uasIdentifier,
 			Null* none) override;
 
-	Status getUasStream(
+	Status getUas(
 			ServerContext* context,
 			const UasIdentifier* uasIdentifier,
-			ServerWriter<Uas>* uasStream) override;
+			Uas* uas) override;
+
+	Status getUasList(
+			ServerContext* context,
+			const Null* none,
+			ServerWriter<Uas>* uasWriter) override;
 };
 
 #endif /* UASMANAGERSERVICE_H_ */
