@@ -11,7 +11,14 @@ service UasManager {
 	rpc getUas(UasIdentifier) returns (Uas) {}
 	rpc getUasList(Null) returns (stream Uas) {}
 	
+	rpc go(Null) returns (Null) {}
+	rpc halt(Null) returns (Null) {}
+	rpc home(Null) returns (Null) {}
+	rpc land(Null) returns (Null) {}
+	rpc launch(Null) returns (Null) {}
 	rpc reboot(Null) returns (Null) {}
+	rpc shutdown(Null) returns (Null) {}
+	
 	rpc setMode(UasMode) returns (Null) {}
 }
 
