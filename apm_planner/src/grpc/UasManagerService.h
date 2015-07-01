@@ -56,7 +56,37 @@ public:
 			const Null* request,
 			ServerWriter<Uas>* uasWriter) override;
 
+	Status go(
+			ServerContext* context,
+			const Null* request,
+			Null* response) override;
+
+	Status halt(
+			ServerContext* context,
+			const Null* request,
+			Null* response) override;
+
+	Status home(
+			ServerContext* context,
+			const Null* request,
+			Null* response) override;
+
+	Status land(
+			ServerContext* context,
+			const Null* request,
+			Null* response) override;
+
+	Status launch(
+			ServerContext* context,
+			const Null* request,
+			Null* response) override;
+
 	Status reboot(
+			ServerContext* context,
+			const Null* request,
+			Null* response) override;
+
+	Status shutdown(
 			ServerContext* context,
 			const Null* request,
 			Null* response) override;

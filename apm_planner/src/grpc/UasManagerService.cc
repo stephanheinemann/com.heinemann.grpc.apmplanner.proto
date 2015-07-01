@@ -118,6 +118,101 @@ Status UasManagerService::getUasList(
 	return Status::OK;
 }
 
+Status UasManagerService::go(
+		ServerContext* context,
+		const Null* request,
+		Null* response) {
+
+	(void) context;
+	(void) request;
+	(void) response;
+	Status status = Status(StatusCode::NOT_FOUND, DETAILS_NOT_FOUND);
+
+	UASInterface* uasIf = UASManager::instance()->getActiveUAS();
+	if (NULL != uasIf) {
+		uasIf->go();
+		status = Status::OK;
+	}
+
+	return status;
+}
+
+Status UasManagerService::halt(
+		ServerContext* context,
+		const Null* request,
+		Null* response) {
+
+	(void) context;
+	(void) request;
+	(void) response;
+	Status status = Status(StatusCode::NOT_FOUND, DETAILS_NOT_FOUND);
+
+	UASInterface* uasIf = UASManager::instance()->getActiveUAS();
+	if (NULL != uasIf) {
+		uasIf->halt();
+		status = Status::OK;
+	}
+
+	return status;
+}
+
+Status UasManagerService::home(
+		ServerContext* context,
+		const Null* request,
+		Null* response) {
+
+	(void) context;
+	(void) request;
+	(void) response;
+	Status status = Status(StatusCode::NOT_FOUND, DETAILS_NOT_FOUND);
+
+	UASInterface* uasIf = UASManager::instance()->getActiveUAS();
+	if (NULL != uasIf) {
+		uasIf->home();
+		status = Status::OK;
+	}
+
+	return status;
+}
+
+Status UasManagerService::land(
+		ServerContext* context,
+		const Null* request,
+		Null* response) {
+
+	(void) context;
+	(void) request;
+	(void) response;
+	Status status = Status(StatusCode::NOT_FOUND, DETAILS_NOT_FOUND);
+
+	UASInterface* uasIf = UASManager::instance()->getActiveUAS();
+	if (NULL != uasIf) {
+		uasIf->land();
+		status = Status::OK;
+	}
+
+	return status;
+}
+
+Status UasManagerService::launch(
+		ServerContext* context,
+		const Null* request,
+		Null* response) {
+
+	(void) context;
+	(void) request;
+	(void) response;
+	Status status = Status(StatusCode::NOT_FOUND, DETAILS_NOT_FOUND);
+
+	UASInterface* uasIf = UASManager::instance()->getActiveUAS();
+	if (NULL != uasIf) {
+		uasIf->launch();
+		status = Status::OK;
+	}
+
+	return status;
+}
+
 Status UasManagerService::reboot(
 		ServerContext* context,
 		const Null* request,
@@ -131,6 +226,25 @@ Status UasManagerService::reboot(
 	UASInterface* uasIf = UASManager::instance()->getActiveUAS();
 	if (NULL != uasIf) {
 		uasIf->reboot();
+		status = Status::OK;
+	}
+
+	return status;
+}
+
+Status UasManagerService::shutdown(
+		ServerContext* context,
+		const Null* request,
+		Null* response) {
+
+	(void) context;
+	(void) request;
+	(void) response;
+	Status status = Status(StatusCode::NOT_FOUND, DETAILS_NOT_FOUND);
+
+	UASInterface* uasIf = UASManager::instance()->getActiveUAS();
+	if (NULL != uasIf) {
+		uasIf->shutdown();
 		status = Status::OK;
 	}
 
