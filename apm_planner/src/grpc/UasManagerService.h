@@ -10,6 +10,7 @@
 
 #include <apm_planner/apm_planner.pb.h>
 #include <apm_planner/apm_planner.grpc.pb.h>
+#include "UasSubscribers.h"
 
 using grpc::ServerContext;
 using grpc::ServerWriter;
@@ -20,15 +21,20 @@ using com::heinemann::grpc::apmplanner::Null;
 using com::heinemann::grpc::apmplanner::Uas;
 using com::heinemann::grpc::apmplanner::UasIdentifier;
 using com::heinemann::grpc::apmplanner::UasMode;
+using com::heinemann::grpc::apmplanner::UasArmed;
+using com::heinemann::grpc::apmplanner::UasSubscriber;
 
 class UasManagerService final : public UasManager::Service {
 private:
 	std::thread* serverThread;
 	std::string socket;
+	UasSubscribers subscribers;
 
 public:
 	static const grpc::string LISTENING;
 	static const grpc::string DETAILS_NOT_FOUND;
+	static const grpc::string SUBSCRIBER_NOT_FOUND;
+	static const grpc::string SUBSCRIBER_ALREADY_EXISTS;
 
 	UasManagerService(grpc::string socket);
 
@@ -95,6 +101,32 @@ public:
 			ServerContext* context,
 			const UasMode* mode,
 			Null* response) override;
+
+	Status setArmed(
+			ServerContext* context,
+			const UasArmed* armed,
+			Null* response) override;
+
+	Status getSubscribers(
+			ServerContext* context,
+			const Null* request,
+			ServerWriter<UasSubscriber>* subscriberWriter) override;
+
+	Status addSubscriber(
+			ServerContext* context,
+			const UasSubscriber* subscriber,
+			Null* response) override;
+
+	Status removeSubscriber(
+			ServerContext* context,
+			const UasSubscriber* subscriber,
+			Null* response) override;
+
+/*
+public slots:
+
+	void voltageChanged(int uasId, double voltage);
+*/
 };
 
 #endif /* UASMANAGERSERVICE_H_ */

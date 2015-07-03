@@ -283,7 +283,6 @@ INCLUDEPATH += \
     src/ui \
     src/ui/linechart \
     src/ui/uas \
-    src/grpc \
     src/ui/map \
     src/uas \
     src/comm \
@@ -441,6 +440,7 @@ HEADERS += \
     src/uas/UAS.h \
     src/uas/UASManager.h \
     src/grpc/UasManagerService.h \
+    src/grpc/UasSubscribers.h \
     src/comm/LinkManager.h \
     src/comm/LinkInterface.h \
     src/comm/SerialLinkInterface.h \
@@ -669,6 +669,7 @@ SOURCES += src/main.cc \
     src/uas/UASManager.cc \
     src/uas/UAS.cc \
     src/grpc/UasManagerService.cc \
+    src/grpc/UasSubscribers.cc \
     src/comm/LinkManager.cc \
     src/comm/LinkInterface.cpp \
     src/comm/QGCFlightGearLink.cc \

@@ -9,6 +9,7 @@
 
 #include <../uas/UASManager.h>
 #include <../uas/UASInterface.h>
+#include <../uas/UAS.h>
 
 using grpc::Server;
 using grpc::ServerBuilder;
@@ -19,6 +20,8 @@ using grpc::StatusCode;
 std::thread* serverThread;
 const grpc::string UasManagerService::LISTENING = "UAS service listening on ";
 const grpc::string UasManagerService::DETAILS_NOT_FOUND = "no active UAS found";
+const grpc::string UasManagerService::SUBSCRIBER_NOT_FOUND = "UAS subscriber not found";
+const grpc::string UasManagerService::SUBSCRIBER_ALREADY_EXISTS = "UAS subscriber already exists";
 
 UasManagerService::UasManagerService(grpc::string socket) {
 	this->socket = socket;
@@ -269,13 +272,82 @@ Status UasManagerService::setMode(
 	return status;
 }
 
+Status UasManagerService::setArmed(
+		ServerContext* context,
+		const UasArmed* armed,
+		Null* response) {
+
+	(void) context;
+	(void) response;
+	Status status = Status(StatusCode::NOT_FOUND, DETAILS_NOT_FOUND);
+
+	UASInterface* uasIf = UASManager::instance()->getActiveUAS();
+	if (NULL != uasIf) {
+		if (armed->armed()) {
+			((UAS*) uasIf)->armSystem();
+		} else {
+			((UAS*) uasIf)->disarmSystem();
+		}
+		status = Status::OK;
+	}
+
+	return status;
+}
+
+Status UasManagerService::getSubscribers(
+		ServerContext* context,
+		const Null* request,
+		ServerWriter<UasSubscriber>* subscriberWriter) {
+
+	(void) context;
+	(void) request;
+	Status status = Status::OK;
+	UasSubscriber uasSubscriber;
+
+	for (QString subscriber : subscribers.getSubscribers()) {
+		uasSubscriber.set_subscriber(subscriber.toStdString());
+		subscriberWriter->Write(uasSubscriber);
+	}
+
+	return status;
+}
+
+Status UasManagerService::addSubscriber(
+		ServerContext* context,
+		const UasSubscriber* subscriber,
+		Null* response) {
+
+	(void) context;
+	(void) response;
+	//Status status = Status(StatusCode::ALREADY_EXISTS, SUBSCRIBER_ALREADY_EXISTS);
+	Status status = Status::OK;
+
+	subscribers.addSubscriber(QString(subscriber->subscriber().c_str()));
+
+	return status;
+}
+
+Status UasManagerService::removeSubscriber(
+		ServerContext* context,
+		const UasSubscriber* subscriber,
+		Null* response) {
+
+	(void) context;
+	(void) response;
+	//Status status = Status(StatusCode::NOT_FOUND, SUBSCRIBER_NOT_FOUND);
+	Status status = Status::OK;
+
+	subscribers.removeSubscriber(QString(subscriber->subscriber().c_str()));
+
+	return status;
+}
+
 void UasManagerService::run() {
 	std::string server_address(this->socket);
 	ServerBuilder builder;
 	builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());
 	builder.RegisterService((UasManager::Service*) this);
 	std::unique_ptr<Server> server(builder.BuildAndStart());
-	std::cout << LISTENING << server_address << std::endl;
 	server->Wait();
 }
 

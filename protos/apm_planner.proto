@@ -20,6 +20,11 @@ service UasManager {
 	rpc shutdown(Null) returns (Null) {}
 	
 	rpc setMode(UasMode) returns (Null) {}
+	rpc setArmed(UasArmed) returns (Null) {}
+	
+	rpc getSubscribers(Null) returns (stream UasSubscriber) {}
+	rpc addSubscriber(UasSubscriber) returns (Null) {}
+	rpc removeSubscriber(UasSubscriber) returns (Null) {}
 }
 
 message Null {
@@ -31,6 +36,10 @@ message UasIdentifier {
 
 message UasMode {
 	int32 mode = 1;
+}
+
+message UasArmed {
+	bool armed = 1;
 }
 
 message Uas {
@@ -46,4 +55,8 @@ message Uas {
 	double roll = 10;
 	double pitch = 11;
 	double yaw = 12;
+}
+
+message UasSubscriber {
+	string subscriber = 1;
 }
