@@ -41,7 +41,7 @@ PROTOS_PATH = protos
 
 vpath %.proto $(PROTOS_PATH)
 
-all: system-check apm_planner_client apm_planner_server
+all: system-check apm_planner_client apm_planner_server apm_events_client apm_events_server
 
 apm_planner_client: apm_planner.pb.o apm_planner.grpc.pb.o apm_planner_client.o
 	$(CXX) $^ $(LDFLAGS) -o $@
@@ -49,9 +49,15 @@ apm_planner_client: apm_planner.pb.o apm_planner.grpc.pb.o apm_planner_client.o
 apm_planner_server: apm_planner.pb.o apm_planner.grpc.pb.o apm_planner_server.o
 	$(CXX) $^ $(LDFLAGS) -o $@
 
+apm_events_client: apm_events.pb.o apm_events.grpc.pb.o apm_events_client.o
+	$(CXX) $^ $(LDFLAGS) -o $@
+
+apm_events_server: apm_events.pb.o apm_events.grpc.pb.o apm_events_server.o
+	$(CXX) $^ $(LDFLAGS) -o $@
+
 lib: all
-	$(CXX) $(CXXFLAGS) -c apm_planner.pb.h apm_planner.grpc.pb.h
-	$(CXX) $(LDFLAGS) -shared -Wl,-soname,libapmgrpc.so.1 -o libapmgrpc.so.1.0 apm_planner.pb.o apm_planner.grpc.pb.o
+	$(CXX) $(CXXFLAGS) -c apm_planner.pb.h apm_planner.grpc.pb.h apm_events.pb.h apm_events.grpc.pb.h
+	$(CXX) $(LDFLAGS) -shared -Wl,-soname,libapmgrpc.so.1 -o libapmgrpc.so.1.0 apm_planner.pb.o apm_planner.grpc.pb.o apm_events.pb.o apm_events.grpc.pb.o
 
 install: lib
 	sudo cp libapmgrpc.so.1.0 /usr/local/lib
@@ -68,7 +74,7 @@ install: lib
 	$(PROTOC) -I $(PROTOS_PATH) --cpp_out=. $<
 
 clean:
-	rm -f *.o *.so* *.pb.cc *.pb.h *.gch apm_planner_client apm_planner_server
+	rm -f *.o *.so* *.pb.cc *.pb.h *.gch apm_planner_client apm_planner_server apm_events_client apm_events_server
 	sudo rm -f /usr/local/lib/libapmgrpc.*
 	sudo rm -rf /usr/local/include/apm_planner
 

@@ -1,0 +1,19 @@
+syntax = "proto3";
+
+option java_package = "com.heinemann.grpc.apmplanner.events";
+option objc_class_prefix = "APMPlanner";
+
+package com.heinemann.grpc.apmplanner.events;
+
+service UasEventDistribution {
+	rpc fire(UasEvent) returns (Null) {}
+}
+
+message Null {
+}
+
+message UasEvent {
+	string identifier = 1;
+	string source = 2;
+	string parameters = 3;
+}
