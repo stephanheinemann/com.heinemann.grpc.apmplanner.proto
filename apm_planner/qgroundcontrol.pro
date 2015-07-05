@@ -441,6 +441,7 @@ HEADERS += \
     src/uas/UASManager.h \
     src/grpc/UasManagerService.h \
     src/grpc/UasSubscribers.h \
+    src/grpc/UasEventProvider.h \
     src/comm/LinkManager.h \
     src/comm/LinkInterface.h \
     src/comm/SerialLinkInterface.h \
@@ -670,6 +671,7 @@ SOURCES += src/main.cc \
     src/uas/UAS.cc \
     src/grpc/UasManagerService.cc \
     src/grpc/UasSubscribers.cc \
+    src/grpc/UasEventProvider.cc \
     src/comm/LinkManager.cc \
     src/comm/LinkInterface.cpp \
     src/comm/QGCFlightGearLink.cc \

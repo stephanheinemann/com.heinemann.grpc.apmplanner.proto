@@ -337,6 +337,7 @@ Status UasManagerService::removeSubscriber(
 	//Status status = Status(StatusCode::NOT_FOUND, SUBSCRIBER_NOT_FOUND);
 	Status status = Status::OK;
 
+	std::cout << "removing subscriber " << subscriber->subscriber() << std::endl;
 	subscribers.removeSubscriber(QString(subscriber->subscriber().c_str()));
 
 	return status;

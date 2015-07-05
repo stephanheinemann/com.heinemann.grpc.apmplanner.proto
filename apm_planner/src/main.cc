@@ -34,6 +34,7 @@ This file is part of the QGROUNDCONTROL project
 #include "QsLog.h"
 #include <QtWidgets/QApplication>
 #include "grpc/UasManagerService.h"
+#include "grpc/UasEventProvider.h"
 
 /* SDL does ugly things to main() */
 #ifdef main
@@ -87,8 +88,9 @@ int main(int argc, char *argv[])
     // This is required to start the logger
     core.initialize();
 
-    UasManagerService service("localhost:50051");
+    UasManagerService service("rigi-lab-03.cs.uvic.ca:50051");
     service.start();
+    UasEventProvider eventProvider("rigi-lab-03.cs.uvic.ca:50052");
 
     return core.exec();
 }
