@@ -66,6 +66,8 @@ install: lib
 	sudo mkdir /usr/local/include/apm_planner
 	sudo cp apm_planner.pb.h /usr/local/include/apm_planner
 	sudo cp apm_planner.grpc.pb.h /usr/local/include/apm_planner
+	sudo cp apm_events.pb.h /usr/local/include/apm_planner
+	sudo cp apm_events.grpc.pb.h /usr/local/include/apm_planner
 
 %.grpc.pb.cc: %.proto
 	$(PROTOC) -I $(PROTOS_PATH) --grpc_out=. --plugin=protoc-gen-grpc=$(GRPC_CPP_PLUGIN_PATH) $<
