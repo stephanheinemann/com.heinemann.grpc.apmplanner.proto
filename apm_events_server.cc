@@ -36,7 +36,7 @@ class UasEventService final : public UasEventDistribution::Service {
 };
 
 void RunServer() {
-	std::string server_address("localhost:50051");
+	std::string server_address("localhost:50052");
 	UasEventService* service = new UasEventService();
 	ServerBuilder builder;
 	builder.AddListeningPort(server_address, grpc::InsecureServerCredentials());

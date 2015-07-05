@@ -49,7 +49,7 @@ public:
 
 int main(int argc, char** argv) {
 	UasEventClient client(
-			grpc::CreateChannel("localhost:50051", grpc::InsecureCredentials(),
+			grpc::CreateChannel("localhost:50052", grpc::InsecureCredentials(),
 					ChannelArguments()));
 
 	std::cout << "-------------- fire --------------" << std::endl;
