@@ -88,9 +88,10 @@ int main(int argc, char *argv[])
     // This is required to start the logger
     core.initialize();
 
+    // TODO: use singleton instances for both
     UasManagerService service("rigi-lab-03.cs.uvic.ca:50051");
+    UasEventProvider eventProvider("rigi-lab-03.cs.uvic.ca:50052", &service);
     service.start();
-    UasEventProvider eventProvider("rigi-lab-03.cs.uvic.ca:50052");
 
     return core.exec();
 }

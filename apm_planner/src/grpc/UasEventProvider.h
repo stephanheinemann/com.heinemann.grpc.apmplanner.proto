@@ -5,6 +5,7 @@
 
 #include <QObject>
 #include "../uas/UASInterface.h"
+#include "UasManagerService.h"
 
 #include <grpc/grpc.h>
 #include <grpc++/channel_arguments.h>
@@ -37,11 +38,12 @@ private:
 	std::unique_ptr<UasEventDistribution::Stub> stub;
 	CompletionQueue queue;
     UASInterface* uasInterface = NULL;
+    UasManagerService* service = NULL;
 
     void fire(UasEvent uasEvent);
 
 public:
-	UasEventProvider(grpc::string socket);
+	UasEventProvider(grpc::string socket, UasManagerService* service);
 	virtual ~UasEventProvider();
 
 public slots:

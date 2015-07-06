@@ -38,6 +38,8 @@ public:
 
 	UasManagerService(grpc::string socket);
 
+	bool hasSubscribers();
+
 	void run();
 	void start();
 	void stop();
@@ -122,11 +124,6 @@ public:
 			const UasSubscriber* subscriber,
 			Null* response) override;
 
-/*
-public slots:
-
-	void voltageChanged(int uasId, double voltage);
-*/
 };
 
 #endif /* UASMANAGERSERVICE_H_ */

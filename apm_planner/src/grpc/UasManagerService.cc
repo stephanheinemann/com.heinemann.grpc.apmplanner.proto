@@ -27,6 +27,10 @@ UasManagerService::UasManagerService(grpc::string socket) {
 	this->socket = socket;
 }
 
+bool UasManagerService::hasSubscribers() {
+	return (0 < this->subscribers.getSubscribers().size());
+}
+
 Status UasManagerService::getActiveUas(
 		ServerContext* context,
 		const Null* request,

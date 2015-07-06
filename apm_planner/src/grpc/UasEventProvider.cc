@@ -6,9 +6,9 @@
 #include "../uas/UASInterface.h"
 #include "../uas/UAS.h"
 
-using com::heinemann::grpc::apmplanner::events::Null;
+//using com::heinemann::grpc::apmplanner::events::Null;
 
-UasEventProvider::UasEventProvider(grpc::string socket) {
+UasEventProvider::UasEventProvider(grpc::string socket, UasManagerService* service) {
 	std::shared_ptr<ChannelInterface> channel = grpc::CreateChannel(
 		socket,
 		grpc::InsecureCredentials(),
@@ -21,6 +21,8 @@ UasEventProvider::UasEventProvider(grpc::string socket) {
 		this,
 		SLOT(activeUASSet(UASInterface*)));
 	activeUASSet(UASManager::instance()->getActiveUAS());
+
+	this->service = service;
 }
 
 UasEventProvider::~UasEventProvider() {
@@ -31,10 +33,12 @@ UasEventProvider::~UasEventProvider() {
 
 void UasEventProvider::fire(UasEvent uasEvent) {
 	ClientContext context;
-	Null null;
+	com::heinemann::grpc::apmplanner::events::Null null;
 
 	// TODO: stub->Asyncfire(&context, uasEvent, &queue);
-	stub->fire(&context, uasEvent, &null);
+	if (service->hasSubscribers()) {
+		stub->fire(&context, uasEvent, &null);
+	}
 }
 
 void UasEventProvider::activeUASSet(UASInterface* uas) {
@@ -79,28 +83,50 @@ void UasEventProvider::activeUASSet(UASInterface* uas) {
 }
 
 void UasEventProvider::navModeChanged(int uasId, int mode, const QString& text) {
-	std::cout << "navModeChanged called" << std::endl;
+	UasEvent uasEvent;
+	uasEvent.set_identifier("navModeChanged");
+	uasEvent.set_source(std::to_string(uasId));
+	uasEvent.set_parameters(
+			"mode=" + std::to_string(mode) + ";" +
+			"text=" + text.toStdString());
+	fire(uasEvent);
 }
 
 void UasEventProvider::armingChanged(bool armed) {
-	std::cout << "armingChanged called" << std::endl;
+	UasEvent uasEvent;
+	uasEvent.set_identifier("armingChanged");
+	uasEvent.set_source(std::to_string(uasInterface->getUASID()));
+	uasEvent.set_parameters(
+			"armed=" + std::to_string(armed));
+	fire(uasEvent);
 }
 
 void UasEventProvider::voltageChanged(int uasId, double voltage) {
-	std::cout << "voltageChanged called " << uasId << " v: " << voltage << std::endl;
+	UasEvent uasEvent;
+	uasEvent.set_identifier("voltageChanged");
+	uasEvent.set_source(std::to_string(uasId));
+	uasEvent.set_parameters(
+			"voltage=" + std::to_string(voltage));
+	fire(uasEvent);
 }
 
 void UasEventProvider::batteryChanged(UASInterface* uas, double voltage, double current, double percent, int seconds) {
-	std::cout << "batteryChanged called " << " v: " << voltage << " c:" << current << " p: " << percent << std::endl;
-
 	UasEvent uasEvent;
 	uasEvent.set_identifier("batteryChanged");
-	uasEvent.set_source(uas->getUASName().toStdString());
-	uasEvent.set_parameters(std::to_string(voltage) + ":" + std::to_string(current) + ":"  + std::to_string(percent) + ":" + std::to_string(seconds));
+	uasEvent.set_source(std::to_string(uas->getUASID()));
+	uasEvent.set_parameters(
+			"voltage=" + std::to_string(voltage) + ";" +
+			"current=" + std::to_string(current) + ";" +
+			"percent=" + std::to_string(percent) + ";" +
+			"seconds=" + std::to_string(seconds));
 	fire(uasEvent);
 }
 
 void UasEventProvider::statusChanged(UASInterface* uas, QString status) {
-	std::cout << "statusChanged called" << std::endl;
+	UasEvent uasEvent;
+	uasEvent.set_identifier("statusChanged");
+	uasEvent.set_source(std::to_string(uas->getUASID()));
+	uasEvent.set_parameters(
+			"status=" + status.toStdString());
+	fire(uasEvent);
 }
-
