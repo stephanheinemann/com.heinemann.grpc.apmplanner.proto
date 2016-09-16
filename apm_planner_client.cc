@@ -2,13 +2,13 @@
 #include <memory>
 
 #include <grpc/grpc.h>
-#include <grpc++/channel_arguments.h>
-#include <grpc++/channel_interface.h>
+#include <grpc++/support/channel_arguments.h>
+#include <grpc++/impl/codegen/channel_interface.h>
 #include <grpc++/client_context.h>
 #include <grpc++/create_channel.h>
-#include <grpc++/credentials.h>
-#include <grpc++/status.h>
-#include <grpc++/stream.h>
+#include <grpc++/security/credentials.h>
+#include <grpc++/impl/codegen/status.h>
+//#include <grpc++/stream.h>
 
 #include "apm_planner.pb.h"
 #include "apm_planner.grpc.pb.h"
@@ -50,7 +50,7 @@ public:
 
 int main(int argc, char** argv) {
 	UasManagerClient client(
-			grpc::CreateChannel("localhost:50051", grpc::InsecureCredentials(),
+			grpc::CreateCustomChannel("localhost:50051", grpc::InsecureChannelCredentials(),
 					ChannelArguments()));
 
 	std::cout << "-------------- GetActiveUAS --------------" << std::endl;

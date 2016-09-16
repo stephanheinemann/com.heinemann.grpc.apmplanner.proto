@@ -4,8 +4,8 @@
 
 #include <grpc++/server.h>
 #include <grpc++/server_builder.h>
-#include <grpc++/server_credentials.h>
-#include <grpc++/status_code_enum.h>
+#include <grpc++/security/server_credentials.h>
+#include <grpc++/support/status_code_enum.h>
 
 #include <../uas/UASManager.h>
 #include <../uas/UASInterface.h>

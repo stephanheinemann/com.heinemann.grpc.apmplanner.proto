@@ -9,9 +9,9 @@
 //using com::heinemann::grpc::apmplanner::events::Null;
 
 UasEventProvider::UasEventProvider(grpc::string socket, UasManagerService* service) {
-	std::shared_ptr<ChannelInterface> channel = grpc::CreateChannel(
+	std::shared_ptr<ChannelInterface> channel = grpc::CreateCustomChannel(
 		socket,
-		grpc::InsecureCredentials(),
+		grpc::InsecureChannelCredentials(),
 		ChannelArguments());
 	stub = UasEventDistribution::NewStub(channel);
 

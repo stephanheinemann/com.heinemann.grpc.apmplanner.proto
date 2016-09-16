@@ -4,9 +4,9 @@
 #include <grpc++/server.h>
 #include <grpc++/server_builder.h>
 #include <grpc++/server_context.h>
-#include <grpc++/server_credentials.h>
-#include <grpc++/status.h>
-#include <grpc++/stream.h>
+#include <grpc++/security/server_credentials.h>
+#include <grpc++/impl/codegen/status.h>
+//#include <grpc++/stream.h>
 
 #include "apm_planner.pb.h"
 #include "apm_planner.grpc.pb.h"

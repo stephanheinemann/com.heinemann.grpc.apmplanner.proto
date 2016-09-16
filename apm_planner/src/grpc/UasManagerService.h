@@ -5,8 +5,8 @@
 
 #include <grpc/grpc.h>
 #include <grpc++/server_context.h>
-#include <grpc++/stream.h>
-#include <grpc++/status.h>
+//#include <grpc++/stream.h>
+#include <grpc++/impl/codegen/status.h>
 
 #include <apm_planner/apm_planner.pb.h>
 #include <apm_planner/apm_planner.grpc.pb.h>
